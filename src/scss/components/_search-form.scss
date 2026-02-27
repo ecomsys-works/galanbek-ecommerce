@@ -1,0 +1,174 @@
+.search-block {
+	width: 100%;
+	max-width: 950px;
+	margin-inline: auto;
+
+	/* =========================
+     Верхний ряд: форма
+  ========================== */
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: 25px; // промежуток между input и крестиком
+		margin-bottom: 10px;
+
+		@include xl {
+			gap: 45px; // промежуток между input и крестиком
+			margin-bottom: 15px;
+		}
+
+		/* input + кнопка search */
+		.search-block__input-wrapper {
+			flex: 1;
+			width: 100%;
+			max-width: 878px; // ограничение ширины input
+			height: 42px;
+			display: flex;
+			align-items: center;
+			background: #fff;
+			border-radius: 10px;
+			padding-left: 20px;
+			padding-right: 0px;
+			padding-block: 10px;
+			overflow: hidden;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+
+			@include xl {
+				height: 54px;
+			}
+
+			transition:
+				box-shadow 0.2s ease,
+				border 0.2s ease;
+
+			&.focus {
+				/* искусственный фокус */
+				border: 1px solid rgba(0, 0, 0, 0.5);
+			}
+
+			.search-block__input {
+				flex: 1;
+				border: none;
+				outline: none;
+				font-size: 14px;
+				@include xl {
+					font-size: 16px;
+				}
+			}
+
+			.search-block__button {
+				background: none;
+				border: none;
+				width: 54px;
+				height: 54px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				opacity: 0.4;
+
+				svg {
+					width: 18px;
+					height: 18px;
+					@include xl {
+						width: 24px;
+						height: 24px;
+					}
+				}
+
+				transition: var(--transition);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		/* Крестик clear */
+		.search-block__clear {
+			width: 22px;
+			height: 22px;
+			background: none;
+			flex-shrink: 0;
+			border: none;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #000;
+			opacity: 0.4; // по умолчанию полупрозрачный
+			transition: opacity 0.2s ease;
+
+			svg {
+				width: 16px;
+				height: 16px;
+				@include xl {
+					width: 22px;
+					height: 22px;
+				}
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	/* =========================
+     Нижний ряд: теги
+  ========================== */
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 7px;
+		@include xl {
+			gap: 10px; // горизонтальный gap между тегами
+		}
+	}
+
+	&__tag {
+		font-size: 11px;
+		padding: 4px 8px;
+		border-radius: 100px;
+		border: 1px solid #000;
+
+		color: #000;
+		opacity: 0.5;
+		background: none;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+		@include xl {
+			font-size: 12px;
+		}
+
+		&:hover,
+		&.active {
+			opacity: 0.8;
+		}
+	}
+}
+
+/* =========================
+   Анимация появления формы поиска
+========================= */
+#search-form {
+	display: none;
+	overflow: hidden;
+}
+
+#search-form.active {
+	display: block;
+	animation: searchFormOpen 0.3s ease forwards;
+	max-height: 500px;
+}
+
+@keyframes searchFormOpen {
+	0% {
+		max-height: 0;
+		opacity: 0;
+	}
+	100% {
+		max-height: 500px;
+		opacity: 1;
+	}
+}

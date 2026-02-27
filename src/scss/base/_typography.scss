@@ -11,3 +11,64 @@ h6 {
 	font-family: var(--font-title);
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------
+ICONS
+--------------------------------------------------------------------------------------------------------------------------------*/
+.icon--burger {
+	width: 19px;
+	height: 16px;
+}
+
+.icon--cart {
+	width: 16px;
+	height: 16px;
+
+	@include xxl {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.icon--header-search {
+	width: 15px;
+	height: 16px;
+	@include xxl {
+		width: 24px;
+		height: 24px;
+	}
+}
+.icon--header-marker {
+	width: 14px;
+	height: 16px;
+	@include xxl {
+		width: 21px;
+		height: 21px;
+	}
+}
+
+.icon--canvas-close {
+	width: 13px;
+	height: 13px;
+}
+
+.icon--canvas-telegram {
+	width: 52px;
+	height: 52px;
+	color: #b584d3;
+	transition: var(--transition);
+
+	&:hover {
+		color: #2c99fe;
+	}
+}
+
+.icon--header-caret {
+	width: 15px;
+	height: 9px;
+}
+
+.icon--canvas-caret-right {
+	width: 10px;
+	height: 15px;
+}
+

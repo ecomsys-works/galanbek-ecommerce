@@ -1,0 +1,130 @@
+/* =============================================================================================================================
+   Offcanvas (мобильное меню)
+================================================================================================================================ */
+.offcanvas {
+	display: none; // скрыто по умолчанию (только адаптив)
+	position: fixed;
+	top: 0;
+	right: -105%; // стартовая позиция за экраном
+	width: 100%;
+	max-width: 390px;
+	height: 100%;
+	background: #fff;
+	z-index: 1000;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+	transition: right 0.3s ease; // анимация появления/скрытия
+	overflow: hidden;
+
+	/* Активное состояние (открытое) */
+	&.active {
+		right: 0;
+	}
+
+	/* Внутренний контейнер */
+	&__inner {
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	/* Скролл-контейнер */
+	&__overflow {
+		flex: 1;
+		overflow-y: auto;
+	}
+
+	/* Кнопка закрытия */
+	&__close {
+		align-self: flex-end;
+		background: none;
+		border: none;
+		cursor: pointer;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--hover);
+		}
+	}
+
+	/* Список меню */
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	/* Телеграм-блок (или любой CTA) */
+	&__telegram {
+		margin-block: 50px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	/* =========================
+       Аккордеонные пункты
+    ========================== */
+
+	&__item--has-children {
+		position: relative;
+	}
+
+	&__sub {
+		max-height: 0; // свернуто по умолчанию
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding-left: 15px;
+		transition: max-height 0.3s ease; // плавное раскрытие
+	}
+
+	&__item a {
+		display: block;
+		color: var(--black);
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--hover);
+		}
+	}
+
+	/* Активное подменю */
+	&__item--open &__sub {
+		max-height: 500px; // достаточно для нескольких пунктов
+		padding-top: 5px;
+	}
+
+	/* Ссылка внутри пункта */
+	&__link {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	/* Каретка для аккордеона */
+	&__caret {
+		width: 12px;
+		height: 12px;
+		transition: transform 0.3s ease;
+	}
+
+	/* Поворот каретки при открытии */
+	&__item--open &__caret {
+		transform: rotate(180deg);
+	}
+}
+
+/* =========================
+   Адаптивное отображение
+========================= */
+@media (max-width: 1120px) {
+	.offcanvas {
+		display: block; // показываем только на мобильных/узких экранах
+	}
+}

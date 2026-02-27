@@ -15,11 +15,12 @@ const filePaths = {
     js: `${srcFolder}/js/*.js`,
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp,avif}`,
     svg: `${srcFolder}/icons/*.svg`,
+    scssboot: `${srcFolder}/scss/boot.scss`,
     scss: `${srcFolder}/scss/main.scss`,
     html: `${srcFolder}/*.html`,
     svgIcons: `${srcFolder}/icons/*.svg`,
     fontFacesFile: `${srcFolder}/scss/base/_fonts.scss`,
-    fonts: `${srcFolder}/fonts/`,   
+    fonts: `${srcFolder}/fonts/`,
   },
   watch: {
     js: `${srcFolder}/js/**/*.js`,

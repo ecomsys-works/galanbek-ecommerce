@@ -1,37 +1,38 @@
 @charset "UTF-8";
 @font-face {
-  font-family: Montserrat;
+  font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: Roboto;
+  font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 /* ------------------------------------------------------------------------------------------------------------------------------
 ROOT
 --------------------------------------------------------------------------------------------------------------------------------*/
 :root {
-  --site-max-width: 90rem;
-  --font-title: "Montserrat", sans-serif;
-  --font-main: "Roboto", sans-serif;
+  --site-max-width: 120rem;
+  --font-title: "Inter", sans-serif;
+  --font-main: "Inter", sans-serif;
   --white: white;
   --black: black;
   --accent: red;
   --text: rgb(47, 47, 47);
-  --bs-transition: all 0.3s ease-in-out;
+  --hover: rgb(0, 0, 0, 0.55);
+  --transition: all 0.3s ease-in-out;
 }
 
 /* =================================================================================================================================
@@ -437,6 +438,18 @@ aside {
 /* ------------------------------------------------------------------------------------------------------------------------------
 MEDIAQUERIES 
 --------------------------------------------------------------------------------------------------------------------------------*/
+.scrollbar-none::-webkit-scrollbar {
+  inline-size: 0;
+  background-color: transparent;
+}
+.scrollbar-none::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-none::-webkit-scrollbar-thumb {
+  border: 0 none transparent;
+  background-color: transparent;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------
 Base
 --------------------------------------------------------------------------------------------------------------------------------*/
@@ -463,6 +476,7 @@ html,
 body {
   inline-size: 100%;
   block-size: 100%;
+  background: #F4F4F4;
 }
 
 .container {
@@ -524,40 +538,171 @@ h6 {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------
-CONTAINER
+ICONS
+--------------------------------------------------------------------------------------------------------------------------------*/
+.icon--burger {
+  width: 1.1875rem;
+  height: 1rem;
+}
+
+.icon--cart {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon--header-search {
+  width: 0.9375rem;
+  height: 1rem;
+}
+
+.icon--header-marker {
+  width: 0.875rem;
+  height: 1rem;
+}
+
+.icon--canvas-close {
+  width: 0.8125rem;
+  height: 0.8125rem;
+}
+
+.icon--canvas-telegram {
+  width: 3.25rem;
+  height: 3.25rem;
+  color: #b584d3;
+  transition: var(--transition);
+}
+.icon--canvas-telegram:hover {
+  color: #2c99fe;
+}
+
+.icon--header-caret {
+  width: 0.9375rem;
+  height: 0.5625rem;
+}
+
+.icon--canvas-caret-right {
+  width: 0.625rem;
+  height: 0.9375rem;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+CONTENT 
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-FOOTER
+FOOTER 
 --------------------------------------------------------------------------------------------------------------------------------*/
-/* ------------------------------------------------------------------------------------------------------------------------------
-GRID
---------------------------------------------------------------------------------------------------------------------------------*/
+/* =========================
+   Шапка сайта
+========================= */
+.header {
+  height: 3.375rem;
+  display: flex;
+  align-items: center;
+  /* Внутренний контейнер: горизонтальное выравнивание */
+  /* Левая часть: логотип и прочее */
+  /* Логотип */
+  /* Навигация по центру */
+  /* Правая часть: иконки, кнопки */
+  /* Кнопки/иконки в шапке */
+  /* Локация/доп. элементы */
+  /* Бургер-меню (мобильное) */
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  width: 5.3125rem;
+  height: 2.125rem;
+}
+.header__logo svg {
+  width: 5.3125rem;
+  height: 2.125rem;
+}
+.header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.header__icon-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--black);
+  transition: var(--transition);
+}
+.header__icon-btn:hover {
+  color: var(--hover);
+}
+.header__burger {
+  display: none;
+}
+
+/* =========================
+   Адаптив
+========================= */
 /* ------------------------------------------------------------------------------------------------------------------------------
 SIDEBAR
---------------------------------------------------------------------------------------------------------------------------------*/
-/* ------------------------------------------------------------------------------------------------------------------------------
-CATALOG PAGE
---------------------------------------------------------------------------------------------------------------------------------*/
-/* ------------------------------------------------------------------------------------------------------------------------------
-CATEGORY PAGE
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
 HOME PAGE
 -------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-POLITICO
+POLITICO PAGE
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-PRODUCT
+PRODUCT PAGE
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-CATALOG FILTERS
+CATALOG CATEGORIES PAGE
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-CATALOG GRID
+CATALOG PRODUCTS PAGE
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
-PRODUCT GALLERY
+CATALOG SUBCATEGORIES PAGE
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG CATEGORIES SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG FILTERS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG PRODUCTS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG HIGHLIGHTS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+FEATURED PRODUCTS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+NEW ARRIVALS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+PRODUCT GALLERY SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+RELATED PRODUCTS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------------------
+WHY CHOOSE US SECTION
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------------------------------
 BUTTON
@@ -568,10 +713,427 @@ CATEGORY CARD
 /* ------------------------------------------------------------------------------------------------------------------------------
 FILTER
 --------------------------------------------------------------------------------------------------------------------------------*/
+/* =========================
+   Header navigation (меню в шапке сайта)
+========================= */
+.nav {
+  /* Пункт меню */
+  /* Основное выпадающее меню */
+  /* Субменю второго уровня */
+  /* Наведение на первый уровень */
+  /* Наведение на пункт с дочерним меню */
+  /* Пункты в выпадающих списках */
+  /* Если есть каретка — раздвигаем текст и стрелку */
+}
+.nav__list {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.nav__item {
+  position: relative;
+}
+.nav__item a {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+.nav__item a:hover {
+  color: var(--hover);
+}
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 0.625rem);
+  left: calc(100% - 2.125rem);
+  width: 21.375rem;
+  max-height: calc(100vh - 4.5625rem); /* лимит высоты для скролла */
+  overflow-y: auto;
+  background: #fff;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.625rem;
+  padding-block: 1.5625rem;
+  padding-inline: 1.875rem;
+  display: none; /* скрыто по умолчанию */
+  z-index: 1000;
+}
+.nav__sub-dropdown {
+  position: fixed; /* фиксированное меню */
+  display: none;
+  width: 100%;
+  width: 21.375rem;
+  max-height: 18.75rem;
+  overflow-y: auto;
+  background: #fff;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.625rem;
+  padding-block: 1.5625rem;
+  padding-inline: 1.875rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  z-index: 1100;
+}
+.nav__item--has-dropdown:hover > .nav__dropdown {
+  display: block;
+}
+.nav__item--has-children:hover > .nav__sub-dropdown {
+  display: block;
+}
+.nav__dropdown a, .nav__sub-dropdown a {
+  letter-spacing: -0.01em;
+  font-size: 0.8125rem;
+  padding-block: 0.5rem;
+}
+.nav__item--has-children > a, .nav__item--has-dropdown > a {
+  justify-content: space-between;
+}
+
+/* каретка */
+.nav__item--has-dropdown .nav__caret {
+  transition: transform 0.3s ease;
+}
+
+/* состояние открытого меню */
+.nav__item--has-dropdown.is-open .nav__caret {
+  transform: rotate(180deg);
+}
+
+/* =============================================================================================================================
+   Offcanvas (мобильное меню)
+================================================================================================================================ */
+.offcanvas {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -105%;
+  width: 100%;
+  max-width: 24.375rem;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: -0.125rem 0 0.625rem rgba(0, 0, 0, 0.05);
+  transition: right 0.3s ease;
+  overflow: hidden;
+  /* Активное состояние (открытое) */
+  /* Внутренний контейнер */
+  /* Скролл-контейнер */
+  /* Кнопка закрытия */
+  /* Список меню */
+  /* Телеграм-блок (или любой CTA) */
+  /* =========================
+        Аккордеонные пункты
+     ========================== */
+  /* Активное подменю */
+  /* Ссылка внутри пункта */
+  /* Каретка для аккордеона */
+  /* Поворот каретки при открытии */
+}
+.offcanvas.active {
+  right: 0;
+}
+.offcanvas__inner {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.offcanvas__overflow {
+  flex: 1;
+  overflow-y: auto;
+}
+.offcanvas__close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.offcanvas__close:hover {
+  color: var(--hover);
+}
+.offcanvas__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.offcanvas__telegram {
+  margin-block: 3.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.offcanvas__item--has-children {
+  position: relative;
+}
+.offcanvas__sub {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-left: 0.9375rem;
+  transition: max-height 0.3s ease;
+}
+.offcanvas__item a {
+  display: block;
+  color: var(--black);
+  transition: color 0.3s ease;
+}
+.offcanvas__item a:hover {
+  color: var(--hover);
+}
+.offcanvas__item--open .offcanvas__sub {
+  max-height: 31.25rem;
+  padding-top: 0.3125rem;
+}
+.offcanvas__link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+.offcanvas__caret {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: transform 0.3s ease;
+}
+.offcanvas__item--open .offcanvas__caret {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   Адаптивное отображение
+========================= */
 /* ------------------------------------------------------------------------------------------------------------------------------
 PRODUCT CARD
 --------------------------------------------------------------------------------------------------------------------------------*/
+.search-block {
+  width: 100%;
+  max-width: 59.375rem;
+  margin-inline: auto;
+  /* =========================
+      Верхний ряд: форма
+   ========================== */
+  /* =========================
+      Нижний ряд: теги
+   ========================== */
+}
+.search-block__top {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+  margin-bottom: 0.625rem;
+  /* input + кнопка search */
+  /* Крестик clear */
+}
+.search-block__top .search-block__input-wrapper {
+  flex: 1;
+  width: 100%;
+  max-width: 54.875rem;
+  height: 2.625rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 0.625rem;
+  padding-left: 1.25rem;
+  padding-right: 0;
+  padding-block: 0.625rem;
+  overflow: hidden;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+.search-block__top .search-block__input-wrapper.focus {
+  /* искусственный фокус */
+  border: 0.0625rem solid rgba(0, 0, 0, 0.5);
+}
+.search-block__top .search-block__input-wrapper .search-block__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+}
+.search-block__top .search-block__input-wrapper .search-block__button {
+  background: none;
+  border: none;
+  width: 3.375rem;
+  height: 3.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: var(--transition);
+}
+.search-block__top .search-block__input-wrapper .search-block__button svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.search-block__top .search-block__input-wrapper .search-block__button:hover {
+  opacity: 1;
+}
+.search-block__top .search-block__clear {
+  width: 1.375rem;
+  height: 1.375rem;
+  background: none;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+.search-block__top .search-block__clear svg {
+  width: 1rem;
+  height: 1rem;
+}
+.search-block__top .search-block__clear:hover {
+  opacity: 0.8;
+}
+.search-block__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4375rem;
+}
+.search-block__tag {
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6.25rem;
+  border: 0.0625rem solid #000;
+  color: #000;
+  opacity: 0.5;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.search-block__tag:hover, .search-block__tag.active {
+  opacity: 0.8;
+}
+
+/* =========================
+   Анимация появления формы поиска
+========================= */
+#search-form {
+  display: none;
+  overflow: hidden;
+}
+
+#search-form.active {
+  display: block;
+  animation: searchFormOpen 0.3s ease forwards;
+  max-height: 31.25rem;
+}
+
+@keyframes searchFormOpen {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 31.25rem;
+    opacity: 1;
+  }
+}
 /* ------------------------------------------------------------------------------------------------------------------------------
 SORTING
 --------------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 370px){
+  .header__burger {
+    margin-left: 2.1875rem;
+  }
+}
+@media (min-width: 1200px){
+  .header__right {
+    gap: 1.5625rem;
+  }
+  .header__location {
+    margin-right: 1.5625rem;
+  }
+  .search-block__top {
+    gap: 2.8125rem;
+    margin-bottom: 0.9375rem;
+  }
+  .search-block__top .search-block__input-wrapper {
+    height: 3.375rem;
+  }
+  .search-block__top .search-block__input-wrapper .search-block__input {
+    font-size: 1rem;
+  }
+  .search-block__top .search-block__input-wrapper .search-block__button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .search-block__top .search-block__clear svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+  .search-block__tags {
+    gap: 0.625rem;
+  }
+  .search-block__tag {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 1400px){
+  .icon--cart {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .icon--header-search {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .icon--header-marker {
+    width: 1.3125rem;
+    height: 1.3125rem;
+  }
+  .header {
+    height: 6.4375rem;
+  }
+  .header__logo {
+    width: 12.875rem;
+    height: 5.1875rem;
+  }
+  .header__logo svg {
+    width: 12.875rem;
+    height: 5.1875rem;
+  }
+  .header__icon-btn {
+    font-size: 1.25rem;
+  }
+  .nav__list {
+    gap: 1.5625rem;
+  }
+  .nav__item a {
+    font-size: 1.25rem;
+  }
+  .nav__dropdown a, .nav__sub-dropdown a {
+    font-size: 0.875rem;
+    padding-block: 0.625rem;
+  }
+}
+@media (max-width: 1120px){
+  .header__nav {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+  }
+  .offcanvas {
+    display: block;
+  }
+}
+@media (any-hover: hover){
+  .scrollbar-none::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }
+}
 /*# sourceMappingURL=main.min.css.map */
