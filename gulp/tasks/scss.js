@@ -17,45 +17,43 @@ import { logger } from "../config/logger.js";
 const sass = gulpSass(dartSass);
 
 const scss = (isBuild, serverInstance) => {
-    //  Основной CSS
-    const mainCSS = gulp
-        .src(filePaths.src.scss) // main.scss
-        .pipe(logger.handleError("SCSS"))
-        .pipe(plugins.if(!isBuild, sourcemaps.init()))
-        .pipe(sassGlob())
-        .pipe(sass({ outputStyle: "expanded" }, null))
-		.pipe(
+	return (
+		gulp
+			.src(filePaths.src.scss)
+			.pipe(logger.handleError("SCSS"))
+
+			.pipe(plugins.if(!isBuild, sourcemaps.init()))
+			.pipe(sassGlob())
+			.pipe(sass({ outputStyle: "expanded" }, null))
+			.pipe(
 				plugins.replace(
 					/(['"]?)(\.\.\/)+(icons|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
 					"$1$2$3$4$6$1"
 				)
 			)
-        .pipe(plugins.if(
-            !isBuild,
-            postcss([autoprefixer(), postcssGroupMedia(), pxtorem({ rootValue: 16, propList: ["*"] })])
-        ))
-        .pipe(rename({ extname: ".min.css" }))
-        .pipe(plugins.if(!isBuild, sourcemaps.write(".")))
-        .pipe(gulp.dest(filePaths.build.css))
-        .pipe(serverInstance.stream());
 
-    //  Bootstrap CSS
-    const bootstrapCSS = gulp
-        .src('./src/scss/boot.scss') // отдельный entry
-        .pipe(logger.handleError("Boot SCSS"))
-        .pipe(plugins.if(!isBuild, sourcemaps.init()))
-        .pipe(sassGlob())
-        .pipe(sass({ outputStyle: "expanded" }, null))
-        .pipe(plugins.if(
-            !isBuild,
-            postcss([autoprefixer(), postcssGroupMedia(), pxtorem({ rootValue: 16, propList: ["*"] })])
-        ))
-        .pipe(rename({ basename: "boot", extname: ".min.css" }))
-        .pipe(plugins.if(!isBuild, sourcemaps.write(".")))
-        .pipe(gulp.dest(filePaths.build.css))
-        .pipe(serverInstance.stream());
+			.pipe(
+				plugins.if(
+					!isBuild,
+					postcss([
+						autoprefixer(),
+						postcssGroupMedia(),
+						pxtorem({
+							rootValue: 16, // базовый размер шрифта
+							propList: ["*"],
+						}),
+					])
+				)
+			)
 
-    return mainCSS && bootstrapCSS;
+			/** Раскомментировать если нужен не сжатый дубль файла стилей */
+			// .pipe(gulp.dest(filePaths.build.css))
+
+			.pipe(rename({ extname: ".min.css" }))
+			.pipe(plugins.if(!isBuild, sourcemaps.write(".")))
+			.pipe(gulp.dest(filePaths.build.css))
+			.pipe(serverInstance.stream())
+	);
 };
 
 export { scss };

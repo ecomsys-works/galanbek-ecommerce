@@ -1,0 +1,19 @@
+.scrollbar-none {
+	&::-webkit-scrollbar {
+		inline-size: 0px;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border: 0 none transparent;
+		background-color: transparent;
+
+		@include any-hover {
+			background-color: transparent;
+		}
+	}
+}

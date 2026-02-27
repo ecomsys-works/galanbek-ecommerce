@@ -2,15 +2,16 @@
 ROOT
 --------------------------------------------------------------------------------------------------------------------------------*/
 :root {
-	--site-max-width: 1440px;
+	--site-max-width: 1920px;
 
-	--font-title: "Montserrat", sans-serif;
-	--font-main: "Roboto", sans-serif;
+	--font-title: "Inter", sans-serif;
+	--font-main: "Inter", sans-serif;
 
 	--white: white;
 	--black: black;
 	--accent: red;
 	--text: rgb(47, 47, 47);
+	--hover: rgb(0, 0, 0, 0.55);
 
-	--bs-transition: all 0.3s ease-in-out;
+	--transition: all 0.3s ease-in-out;
 }

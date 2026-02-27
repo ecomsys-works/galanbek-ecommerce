@@ -1,0 +1,114 @@
+/* =========================
+   Header navigation (меню в шапке сайта)
+========================= */
+.nav {
+	// Верхнее горизонтальное
+	&__list {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+
+		@include xxl {
+			gap: 25px;
+		}
+	}
+	/* Пункт меню */
+	&__item {
+		position: relative;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			text-decoration: none;
+			font-size: 17px;
+			font-weight: 500;
+			color: var(--black);
+			transition: color 0.2s ease;
+
+			@include xxl {
+				font-size: 20px;
+			}
+
+			&:hover {
+				color: var(--hover);
+			}
+		}
+	}
+	/* Основное выпадающее меню */
+	&__dropdown {
+		position: absolute;
+		top: calc(100% + 10px);
+		left: calc(100% - 34px);
+		width: 342px;
+		max-height: calc(100vh - 73px); /* лимит высоты для скролла */
+		overflow-y: auto;
+		background: #fff;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+		padding-block: 25px;
+		padding-inline: 30px;
+		display: none; /* скрыто по умолчанию */
+		z-index: 1000;
+	}
+
+	/* Субменю второго уровня */
+	&__sub-dropdown {
+		position: fixed; /* фиксированное меню */
+		display: none;
+		width: 100%;
+		width: 342px;
+		max-height: 300px;
+		overflow-y: auto;
+		background: #fff;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+		padding-block: 25px;
+		padding-inline: 30px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+		z-index: 1100;
+	}
+
+	/* Наведение на первый уровень */
+	&__item--has-dropdown:hover > .nav__dropdown {
+		display: block;
+	}
+
+	/* Наведение на пункт с дочерним меню */
+	&__item--has-children:hover > .nav__sub-dropdown {
+		display: block;
+	}
+
+	/* Пункты в выпадающих списках */
+	&__dropdown,
+	&__sub-dropdown {
+		a {
+			letter-spacing: -0.01em;
+			font-size: 13px;
+			padding-block: 8px;
+			@include xxl {
+				font-size: 14px;
+				padding-block: 10px;
+			}
+		}
+	}
+
+	/* Если есть каретка — раздвигаем текст и стрелку */
+	&__item--has-children,
+	&__item--has-dropdown {
+		> a {
+			justify-content: space-between;
+		}
+	}
+}
+
+/* каретка */
+.nav__item--has-dropdown .nav__caret {
+	transition: transform 0.3s ease;
+}
+
+/* состояние открытого меню */
+.nav__item--has-dropdown.is-open .nav__caret {
+	transform: rotate(180deg);
+}

@@ -1,0 +1,119 @@
+/* =========================
+   Шапка сайта
+========================= */
+.header {
+    height: 54px; // стандартная высота
+    display: flex;
+    align-items: center;
+
+    @include xxl {
+        height: 103px; // высота на больших экранах
+    }
+
+    /* Внутренний контейнер: горизонтальное выравнивание */
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Левая часть: логотип и прочее */
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Логотип */
+    &__logo {
+        width: 85px;
+        height: 34px;
+
+        @include xxl {
+            width: 206px;
+            height: 83px;
+        }
+
+        svg {
+            width: 85px;
+            height: 34px;
+
+            @include xxl {
+                width: 206px;
+                height: 83px;
+            }
+        }
+    }
+
+    /* Навигация по центру */
+    &__nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Правая часть: иконки, кнопки */
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include xl {
+            gap: 25px;
+        }
+    }
+
+    /* Кнопки/иконки в шапке */
+    &__icon-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        font-size: 12px;
+        font-weight: 500;
+
+        @include xxl {
+            font-size: 20px;
+        }
+
+        color: var(--black);
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--hover);
+        }
+    }
+
+    /* Локация/доп. элементы */
+    &__location {
+        @include xl {
+            margin-right: 25px;
+        }
+    }
+
+    /* Бургер-меню (мобильное) */
+    &__burger {
+        display: none;
+
+        @media (min-width: 370px) {
+            margin-left: 35px;
+        }
+    }
+}
+
+/* =========================
+   Адаптив
+========================= */
+@media (max-width: 1120px) {
+    .header {
+        &__nav {
+            display: none; // прячем стандартное меню
+        }
+
+        &__burger {
+            display: flex; // показываем бургер
+        }
+    }
+}
