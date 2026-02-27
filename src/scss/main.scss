@@ -7,19 +7,19 @@
 
 @import "base/reset";
 
-@import "utils/*.scss";
+@import "utils/**/*.scss";
 
 @import "base/base";
 
 @import "base/typography";
 
-@import "layout/*.scss";
+@import "layout/**/*.scss";
 
-@import "pages/*.scss";
+@import "pages/**/*.scss";
 
-@import "sections/*.scss";
+@import "sections/**/*.scss";
 
-@import "components/*.scss";
+@import "components/**/*.scss";
 
 
 

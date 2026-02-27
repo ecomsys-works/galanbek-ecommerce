@@ -1,3 +1,4 @@
+
 # базовая SCSS структура для проекта 
 
 ```bash
@@ -22,7 +23,7 @@ scss/
 │   └── ... 
 │  
 │
-├── layout/                # Структурные части сайта (глобальные)
+├── layout/                  # Структурные части сайта (глобальные)
 │   ├── _container.scss
 │   ├── _grid.scss
 │   ├── _header.scss
@@ -30,27 +31,32 @@ scss/
 │   ├── _sidebar.scss
 │   └── ... 
 │
-├── components/            # UI-компоненты (переиспользуемые)
+├── components/                        # UI-компоненты (переиспользуемые)
 │   ├── _button.scss
-│   ├── _category-card.scss
-│   ├── _filter.scss
-│   ├── _product-card.scss
+│   ├── _category-card.scss            # Карточка категории
+│   ├── _filter.scss                   # Компонент фильтра 
+│   ├── _breadcrumb.scss               # Хлебные крошки
+│   ├── _product-card.scss             # Карточка товара или варианта
 │   ├── _sorting.scss
 │   └── ...
 │
-├── sections/              # Конкретные секции страницы (крупные блоки)
-│   ├── _catalog_filters.scss
-│   ├── _catalog-grid.scss
-│   ├── _product-gallery.scss   
+├── sections/                          # Конкретные секции страницы (крупные блоки)
+│   ├── _categories-highlights.scss    # Промо / акцентные карточки категорий (популярное, новинки, акции) 
+│   ├── _catalog-categories.scss       # Секция категории с карточками подкатегорий
+│   ├── _catalog-products.scss         # Секция категории с карточками товаров
+│   ├── _catalog-filters.scss          # Фильтры (цена, бренд, параметры)
+│   ├── _product-gallery.scss          # Галерея изображений / вариантов на странице товара
 │   └── ... 
 │
-├── pages/                 # Стили конкретных страниц (только структура страницы)
-│   ├── _home.scss
-│   ├── _catalog.scss
-│   ├── _category.scss
-│   ├── _product.scss
-│   ├── _politico.scss
-│   └── ... 
+├── pages/                           # Стили конкретных страниц (только структура страницы)
+│   ├── _home.scss                   # Главная страница
+│   ├── _politico.scss               # Страница политика конфиденциальности
+│   ├── _product.scss                # Страница товара   
+│   ├── catalog/                          # Ветка категории
+│   │     ├── _catalog-categories.scss            # Страница с основными категориями
+│   │     ├── _catalog-subcategories.scss         # Страница с подкатегориями
+│   │     └── _catalog-products.scss     # Страница подкатегории с товарами
+│   └── ...          
 │
 └── main.scss              # Главный файл сборки
 ```

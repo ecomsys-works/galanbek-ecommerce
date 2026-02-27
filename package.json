@@ -5,7 +5,8 @@
 	"main": "gulpfile.js",
 	"type": "module",
 	"scripts": {
-		"img": "node .npm/images.js",
+		"images": "node .npm/images.js",
+		"webp": "node .npm/onlywebp.js",
 		"gutters": "node .npm/gutters.js",
 		"build": "gulp build --build",
 		"dev": "gulp"
