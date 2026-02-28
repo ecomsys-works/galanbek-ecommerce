@@ -1,3 +1,153 @@
-/* ------------------------------------------------------------------------------------------------------------------------------
-BUTTON
---------------------------------------------------------------------------------------------------------------------------------*/
+.btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Базовый padding, автоширина */
+	padding-inline: 82px;
+	height: 54px;
+	border-radius: 20px;
+	border: none;
+	overflow: hidden;
+	align-self: flex-start;
+
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+
+	cursor: pointer;
+	color: #fff;
+
+	transition:
+		transform 0.08s ease,
+		box-shadow 0.2s ease;
+
+	/* ================= GRADIENT LAYER ================= */
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		z-index: 1;
+
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 100%);
+
+		background-size: 200% 100%;
+		background-position: 0% 50%;
+
+		transition: background-position 0.6s ease;
+	}
+
+	&:hover::before {
+		background-position: 100% 50%;
+	}
+
+	/* ================= TEXT ================= */
+	&__text {
+		position: relative;
+		z-index: 2;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: #fff;
+
+		text-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.35),
+			0 0 1px rgba(0, 0, 0, 0.2);
+	}
+
+	/* ================= ICON ================= */
+	&__icon {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		height: 38px;
+		z-index: 2;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img,
+		svg {
+			aspect-ratio: 1/1;
+			height: 38px;
+			width: auto;
+		}
+		@include xxl {
+			top: 0;
+			right: 0;
+			height: 100%;
+			img,
+			svg {
+				aspect-ratio: 1/1;
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+
+	/* ================= STATES ================= */
+	&:active {
+		transform: scale(0.97);
+	}
+
+	&:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(108, 83, 123, 0.35);
+	}
+
+	&:disabled,
+	&.is-disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	/* ================= SIZES ================= */
+
+	&--lg {
+		width: 100%;
+		max-width: 668px;
+	}
+
+	&--md {
+		width: 100%;
+		max-width: 430px;
+	}
+
+	&--sm {
+		width: 100%;
+		max-width: 340px;
+	}
+
+	&--full {
+		width: 100%;
+	}
+
+	&--tg {
+		width: 100%;
+		max-width: 392px;
+		border-radius: 100px;
+	}
+
+	&--tg-full {
+		width: 100%;
+		border-radius: 100px;
+	}
+
+	/* ================= COLOR VARIANTS ================= */
+	&--dark {
+		background-color: #6c537b;
+	}
+
+	&--gray {
+		background-color: #b4afb7;
+	}
+
+	&--light {
+		background-color: #c9aadc;
+	}
+}

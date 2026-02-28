@@ -28,6 +28,11 @@
         width: 85px;
         height: 34px;
 
+        transition: var(--transition);
+		&:hover {
+			transform: scale(1.025);
+		}
+
         @include xxl {
             width: 206px;
             height: 83px;

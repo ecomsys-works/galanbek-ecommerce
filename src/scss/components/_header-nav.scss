@@ -11,6 +11,12 @@
 		@include xxl {
 			gap: 25px;
 		}
+
+		& > .nav__item > a {
+			&:hover {
+				padding-left: 0;
+			}
+		}
 	}
 	/* Пункт меню */
 	&__item {
@@ -24,13 +30,14 @@
 			font-size: 17px;
 			font-weight: 500;
 			color: var(--black);
-			transition: color 0.2s ease;
+			transition: all 0.2s ease;
 
 			@include xxl {
 				font-size: 20px;
 			}
 
 			&:hover {
+				padding-left: 10px;
 				color: var(--hover);
 			}
 		}
