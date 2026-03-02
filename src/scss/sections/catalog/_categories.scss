@@ -1,0 +1,106 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG CATEGORIES SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+
+.categories {
+	// на главной
+	&--home {
+		padding-top: 35px;
+		padding-bottom: 50px;
+
+		@include xxl {
+			padding-top: 75px;
+			padding-bottom: 75px;
+		}
+	}
+
+	// на старнице каталога
+	&--catalog {
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+		@include md {
+			padding-top: 50px;
+		}
+
+		@include xxxl {
+			padding-top: 40px;
+			padding-bottom: 150px;
+		}
+	}
+
+	&--categories {
+		padding-bottom: 100px;
+		@include xxxl {
+			padding-bottom: 150px;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: var(--black);
+
+		font-size: 28px;
+		text-align: center;
+
+		margin-bottom: 30px;
+
+		@include sm {
+			font-size: 30px;
+			margin-bottom: 20px;
+		}
+		@include md {
+			font-size: 44px;
+			margin-bottom: 20px;
+		}
+
+		@include xxl {
+			font-size: 55px;
+			margin-bottom: 40px;
+		}
+
+		&--categories {
+			text-align: left;
+
+			font-weight: 500;
+			font-size: 28px;
+			margin-bottom: 25px;
+
+			@include sm {
+				display: none;
+			}
+
+			@include xxl {
+				display: block;
+				font-weight: 600;
+				font-size: 50px;
+			}
+		}
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 12px;
+
+		@include md {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		@include xxl {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+	}
+}
+
+.categories-bottom-spaces {
+	margin-bottom: 50px;
+
+	@include xxl {
+		margin-bottom: 75px;
+	}
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+	@@include('html/components/head.html', { 'title': 'Главная' })
+
+	<body id="home-page">
+		<div class="overlay" data-overlay></div>
+
+		<div class="wrapper">
+			@@include('html/parts/header.html')
+			<main class="main">
+				@@include('html/sections/home/promos.html')
+				@@include('html/sections/home/new-products.html')
+				@@include('html/sections/home/catalog.html')
+				@@include('html/sections/home/trust.html')
+				@@include('html/sections/home/map.html')
+			</main>
+			@@include('html/parts/footer.html')
+		</div>
+		@@include('html/components/script.html')
+	</body>
+</html>

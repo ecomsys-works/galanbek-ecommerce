@@ -1,0 +1,181 @@
+/* =========================================================
+   Catalog Highlights Section
+   ========================================================= */
+.highlights {
+	@include xxl {
+		padding-top: 4px;
+		background: var(--white);
+		padding-bottom: 30px;
+	}
+
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		@include sm {
+			gap: 20px;
+		}
+
+		@include xl {
+			flex-direction: row;
+			&group {
+				width: 50%;
+			}
+		}
+	}
+
+	&__gridgroup {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		@include md {
+			gap: 20px;
+			flex-direction: row;
+		}
+
+		/* Mobile layout: все по одному */
+		.highlights-card {
+			width: 100%;
+			border-radius: 16px;
+			aspect-ratio: 370 / 192; // мобилка
+
+			@include sm {
+				aspect-ratio: initial;
+				height: 310px;
+			}
+
+			@include md {
+				height: 223px;
+			}
+
+			@include xxxl {
+				height: 257px;
+			}
+		}
+	}
+
+	/* ================= Ensure cards fill cells ================= */
+	&-card {
+		display: block;
+		position: relative;
+		overflow: hidden;
+
+		border-radius: 16px;
+
+		padding: 15px;
+		@include sm {
+			padding: 20px;
+		}
+
+		@include md {
+			padding: 25px;
+		}
+
+		@include xxl {
+			padding: 30px;
+			border-radius: 20px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		&:hover {
+			animation: lift 0.3s forwards;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		}
+
+		/* ================= TITLE ================= */
+
+		&__title {
+			position: relative;
+			font-weight: 600;
+			line-height: 1;
+			letter-spacing: -0.02em;
+
+			font-size: 18px;
+			color: white;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			@include sm {
+				font-size: 28px;
+			}
+
+			@include lg {
+				font-size: 26px;
+			}
+
+			@include xxxl {
+				font-size: 30px;
+			}
+		}
+
+		/* ================= BUTTON ================= */
+
+		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 33px;
+			height: 33px;
+			border-radius: 50%;
+			background: #fff;
+			color: var(--black);
+			cursor: pointer;
+
+			transition: all 0.3s ease-in-out;
+
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+
+			@include sm {
+				right: 15px;
+				width: 50px;
+				height: 50px;
+
+				svg {
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			@include lg {
+				width: 43px;
+				height: 43px;
+
+				svg {
+					width: 17px;
+					height: 17px;
+				}
+			}
+
+			@include xxxl {
+				right: 30px;
+				width: 50px;
+				height: 50px;
+
+				svg {
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
+	}
+}

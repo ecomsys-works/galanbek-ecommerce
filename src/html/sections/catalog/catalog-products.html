@@ -1,0 +1,375 @@
+<section class="catalog">
+	<div class="container">
+		<h2 class="catalog__title">Apple iPhone 17 Pro Max</h2>
+
+		<!-- Canvas фильтра (mobile) -->
+		@@include('../../components/filter-canvas.html')
+
+		<!-- catalog layout -->
+		<div class="catalog__layout">
+			<!-- sidebar -->
+			<aside class="catalog__sidebar">
+				<div class="sidebar scrollbar-none">@@include('../../components/filter-sidebar.html')</div>
+			</aside>
+
+			<!-- content -->
+			<div class="catalog__content">
+				<!-- Скрытый нативный селект для сортировки по цене / по умолчанию -->
+				<select
+					class="sort-native"
+					name="sort"
+					id="sortCatalog"
+					data-sort-select
+					data-sort-id="sortCatalog"
+					aria-label="Сортировка товаров"
+				>
+					<option value="default-desc" selected>Сначала популярные</option>
+					<option value="default-asc">Сначала новые</option>
+					<option value="price-asc">Цена: по возрастанию</option>
+					<option value="price-desc">Цена: по убыванию</option>
+					<option value="discount-desc">Сначала со скидкой</option>
+					<option value="rating-desc">Лучшие по рейтингу</option>
+				</select>
+
+				<!-- Скрытый нативный селект для сортировки по популярности / новизне / всем товарам -->
+				<select
+					class="sort-native"
+					name="sort-types"
+					id="sortTypes"
+					data-sort-select
+					data-sort-id="sortTypes"
+					aria-label="Сортировка по типам"
+				>
+					<option value="all" selected>Все типы</option>
+					<option value="newest">Новые поступления</option>
+					<option value="popular">Популярные</option>
+					<option value="sale">Со скидкой</option>
+					<option value="recommended">Рекомендовано</option>
+				</select>
+
+				<!-- Группа селектов для сортировкаи десктопная версия -->
+				<div class="catalog__sorts-group">
+					<!-- Контейнер для кастомного десктопного UI -->
+					<div class="sort-desktop sort-desktop--catalog" data-sort-desktop data-sort-id="sortCatalog">
+						<!-- Core вставит сюда <div class="sort-desktop__current"> и <ul> с пунктами -->
+					</div>
+					<!-- Контейнер для кастомного десктопного UI -->
+					<div class="sort-desktop sort-desktop--types" data-sort-desktop data-sort-id="sortTypes">
+						<!-- Core вставит сюда <div class="sort-desktop__current"> и <ul> с пунктами -->
+					</div>
+
+					<!-- filter canvas button -->
+					<button class="filter-toggle" id="filterBtn">
+						<svg class="icon icon--filter-toggle">
+							<use href="./icons/symbol/sprite.svg#filter"></use>
+						</svg>
+						<span>Фильтр</span>
+					</button>
+				</div>
+
+				<!-- Сетка с товарами -->
+				<div class="products__grid">
+					<!-- 1 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Orange.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 2 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Orange.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 3 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13White.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 4 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13White.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 5 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Black.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 6 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Black.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 7 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Orange.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 8 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Orange.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 9 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13White.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 10 -->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13White.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 11-->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Black.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- 12-->
+					<article class="product-card">
+						<a href="#" class="product-card__image-wrapper">
+							<img
+								src="../../../images/webp/catalog-products/AppleMacBookAir13Black.webp"
+								alt=""
+								class="product-card__image"
+							/>
+						</a>
+
+						<div class="product-card__content">
+							<h3 class="product-card__title">
+								<a href="#">Apple MacBook Air 13" (M2, 8C CPU/8C GPU, 2022), 8 ГБ, 256 ГБ </a>
+							</h3>
+
+							<div class="product-card__group">
+								<div class="product-card__price">71 990 ₽</div>
+
+								<a href="#" class="btn btn--full btn--dark product-card__button">
+									<span class="btn__text">Подробнее</span>
+								</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

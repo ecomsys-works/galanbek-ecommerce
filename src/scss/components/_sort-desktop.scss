@@ -1,0 +1,126 @@
+/*===========================================================
+ * Скрываем нативный селект (истина, используется Core)
+ * ===========================================================*/
+.sort-native {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+/* ===========================================================
+ * Десктопный кастомный селект
+ * ===========================================================*/
+.sort-desktop {
+	position: relative;
+	cursor: pointer;
+
+	&--types {
+		display: inline-block;
+	}
+
+	&--catalog {
+		display: none;
+		@include lg {
+			display: inline-block;
+		}
+	}
+}
+
+.sort-desktop__current {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: -0.02em;
+
+	padding: 5px 12px 5px 3px;
+	transition: color 0.3s ease-in-out;
+}
+
+/* Каретка стрелочки */
+.sort-desktop__caret {
+	font-size: 8px;
+	transition: transform 0.25s ease;
+}
+
+/* ===========================================================
+ * Выпадающий список
+ * ===========================================================*/
+.sort-desktop__dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px 0;
+
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	list-style: none;
+
+	opacity: 0;
+	transform: translateY(10px);
+	pointer-events: none;
+	transition: 0.2s ease;
+}
+
+/* Варианты ширины dropdown */
+.sort-desktop__dropdown--default {
+	min-width: 237px;
+}
+.sort-desktop__dropdown--short {
+	min-width: 177px;
+}
+
+/* ===========================================================
+ *  Hover эффекты для открытия
+ * ===========================================================*/
+.sort-desktop:hover .sort-desktop__current {
+	background-color: #fff;
+	color: rgba(0, 0, 0, 1);
+}
+
+.sort-desktop:hover .sort-desktop__dropdown {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.sort-desktop:hover .sort-desktop__caret {
+	transform: rotate(180deg);
+}
+
+/* ===========================================================
+ * Элементы списка
+ * ===========================================================*/
+.sort-desktop__dropdown li {
+	padding: 12px;
+	cursor: pointer;	
+	transition: background 0.15s ease;
+
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 100%;
+	letter-spacing: -0.01em;
+	white-space: nowrap; /* текст не переносится */
+}
+
+
+.sort-desktop__dropdown li.active,
+.sort-desktop__dropdown li:hover {
+	background: rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 1);
+}

@@ -1,30 +1,34 @@
 <section id="search-form" class="search-block">
-	<!-- Верхний ряд: форма поиска -->
-	<form class="search-block__top" action="#" method="GET">
-		<div class="search-block__input-wrapper">
-			<input type="text" class="search-block__input" placeholder="Поиск..." name="query" />
+	<div class="container">
+		<div class="search-block__wrap">
+			<!-- Верхний ряд: форма поиска -->
+			<form class="search-block__top" action="#" method="GET">
+				<div class="search-block__input-wrapper">
+					<input type="text" class="search-block__input" placeholder="Поиск..." name="query" />
 
-			<!-- Кнопка поиска -->
-			<button type="submit" class="search-block__button">
-				<svg class="icon icon-search-search">
-					<use href="./icons/symbol/sprite.svg#search"></use>
-				</svg>
-			</button>
+					<!-- Кнопка поиска -->
+					<button type="submit" class="search-block__button">
+						<svg class="icon icon-search-search">
+							<use href="./icons/symbol/sprite.svg#search"></use>
+						</svg>
+					</button>
+				</div>
+
+				<!-- Кнопка очистки -->
+				<button type="button" class="search-block__clear">
+					<svg class="icon icon--search-clear">
+						<use href="./icons/symbol/sprite.svg#close"></use>
+					</svg>
+				</button>
+			</form>
+
+			<!-- Нижний ряд: теги -->
+			<div class="search-block__tags">
+				<button type="button" class="search-block__tag">iPhone 17</button>
+				<button type="button" class="search-block__tag">iPhone 17 Pro Max</button>
+				<button type="button" class="search-block__tag">iPhone 17 Air</button>
+				<button type="button" class="search-block__tag">MacBook M4</button>
+			</div>
 		</div>
-
-		<!-- Кнопка очистки -->
-		<button type="button" class="search-block__clear">
-			<svg class="icon icon--search-clear">
-				<use href="./icons/symbol/sprite.svg#close"></use>
-			</svg>
-		</button>
-	</form>
-
-	<!-- Нижний ряд: теги -->
-	<div class="search-block__tags">
-		<button type="button" class="search-block__tag">iPhone 17</button>
-		<button type="button" class="search-block__tag">iPhone 17 Pro Max</button>
-		<button type="button" class="search-block__tag">iPhone 17 Air</button>
-		<button type="button" class="search-block__tag">MacBook M4</button>
 	</div>
 </section>

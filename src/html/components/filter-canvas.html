@@ -1,0 +1,251 @@
+<div class="filter-c" id="filterCanvas">
+	<!-- Parent controller -->
+	<div class="filter-c-section filter-c-section--parent">
+		<span class="filter-c-header filter-c-header--parent">
+			<button class="filter-c-group" data-parent-toggle>
+				<svg class="icon icon--filter-c">
+					<use href="./icons/symbol/sprite.svg#filter"></use>
+				</svg>
+				<span>Фильтр</span>
+			</button>
+
+			<button class="filter-c-close" id="filter-c-close">
+				<svg class="icon icon--close-c">
+					<use href="./icons/symbol/sprite.svg#close"></use>
+				</svg>
+			</button>
+		</span>
+	</div>
+
+	<div class="filter-c-wrap--parent scrollbar-none">
+		<!-- SORTING -->
+		<div class="filter-c-section filter-c-section--child filter-c-section--sort" data-sort-id="sortCatalogCanvas">
+			<!-- Place for inject -->
+		</div>
+
+		<div class="filter-c-wrap--child ">
+			<!-- Child Цена -->
+			<div class="filter-c-section filter-c-section--child ">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Цена</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner">
+						<!-- Price slider -->
+						<div class="filter-price">
+							<div class="filter-price__boxes">
+								<div class="filter-price__box">
+									<span id="price-min-label">68390</span>
+								</div>
+								<div class="filter-price__box">
+									<span id="price-max-label">140990</span>
+								</div>
+							</div>
+							<div id="price-slider-c" class="filter-price__slider"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Child Память -->
+			<div class="filter-c-section filter-c-section--child">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Память</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner">
+						<!-- 1 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input type="checkbox" class="filter-check__input" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">256</span>
+								<span class="filter-check__count">(10)</span>
+							</label>
+						</div>
+						<!-- 2 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input type="checkbox" class="filter-check__input" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">512</span>
+								<span class="filter-check__count">(5)</span>
+							</label>
+						</div>
+						<!-- 3 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input type="checkbox" class="filter-check__input" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">1024</span>
+								<span class="filter-check__count">(3)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Child section "Модель" -->			
+			<div class="filter-c-section filter-c-section--child">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Модель</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner">
+						<!-- iPhone 14 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">iPhone 14</span>
+							</label>
+						</div>
+						<!-- iPhone 13 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">iPhone 13</span>
+							</label>
+						</div>
+						<!-- iPhone 12 -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">iPhone 12</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Child section "Цвет" -->			
+			<div class="filter-c-section filter-c-section--child">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Цвет</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner">
+						<!-- Черный -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">Черный</span>
+							</label>
+						</div>
+						<!-- Белый -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">Белый</span>
+							</label>
+						</div>
+						<!-- Оранжевый -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">Оранжевый</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Child section "СИМ" -->			
+			<div class="filter-c-section filter-c-section--child">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Sim</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner">
+						<!-- Single SIM -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">Single SIM</span>
+							</label>
+						</div>
+						<!-- Dual SIM -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">Dual SIM</span>
+							</label>
+						</div>
+						<!-- eSIM -->
+						<div class="filter-check">
+							<label class="filter-check__label">
+								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<span class="filter-check__custom">
+									<svg class="icon--checkmark-small">
+										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
+									</svg>
+								</span>
+								<span class="filter-check__text">eSIM</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<div class="filter-c-footer">
+		<button class="btn btn--dark btn--fullheight">Показать</button>
+	</div>
+</div>

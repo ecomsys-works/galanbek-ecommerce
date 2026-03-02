@@ -1,0 +1,36 @@
+/* Мобильная версия — mobile first */
+.filter-toggle,
+.filter-sorting {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px; /* расстояние между иконкой и текстом */
+	padding: 10px 0;
+	color: var(--black);
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px; /* размер текста по умолчанию */
+	line-height: 1;
+	transition: var(--transition);
+
+	svg.icon--filter-sorting {
+		width: 17px;
+		height: 17px;
+		fill: currentColor; /* цвет совпадает с текстом */
+	}
+
+	svg.icon--filter-toggle {
+		width: 20px;
+		height: 20px;
+		fill: currentColor; /* цвет совпадает с текстом */
+	}
+
+	@include lg {
+		display: none;
+	}
+
+	&:hover {
+		color: rgb(0, 0, 0, 0.7);
+	}
+}

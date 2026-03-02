@@ -1,4 +1,3 @@
-
 /* ------------------------------------------------------------------------------------------------------------------------------
 CATALOG CARD
 --------------------------------------------------------------------------------------------------------------------------------*/
@@ -80,29 +79,54 @@ CATALOG CARD
 	}
 
 	&__button {
-		position: relative;
-		flex-shrink: 0;
-
-		width: 43px;
-		height: 43px;
-		color: var(--black);
-
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
+		width: 33px;
+		height: 33px;
 		border-radius: 50%;
-		border: 1px solid #ddd;
 		background: #ddd;
+		color: var(--black);
 		cursor: pointer;
 
-		transition:
-			background 0.3s ease,
-			color 0.3s ease;
+		transition: all 0.3s ease-in-out;
 
 		svg {
-			width: 18px;
-			height: 18px;
+			width: 14px;
+			height: 14px;
+		}
+
+		@include sm {
+			right: 15px;
+			width: 50px;
+			height: 50px;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		@include lg {
+			width: 43px;
+			height: 43px;
+
+			svg {
+				width: 17px;
+				height: 17px;
+			}
+		}
+
+		@include xxxl {
+			right: 30px;
+			width: 50px;
+			height: 50px;
+
+			svg {
+				width: 20px;
+				height: 20px;
+			}
 		}
 
 		&:hover {

@@ -1,8 +1,22 @@
 .search-block {
+	position: absolute;
+	top: 100%;
+	left: 0;
 	width: 100%;
-	max-width: 950px;
-	margin-inline: auto;
-	margin-bottom: 20px;
+
+	background: #f4f4f4;
+	padding-bottom: 40px;
+
+	box-shadow: 0 6px 8px -6px rgba(0, 0, 0, 0.15);
+
+	&__wrap {
+		position: relative;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 950px;
+		width: 100%;
+	}
 
 	/* =========================
      Верхний ряд: форма
@@ -165,7 +179,7 @@
 ========================= */
 #search-form {
 	display: none;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 #search-form.active {

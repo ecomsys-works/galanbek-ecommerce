@@ -1,0 +1,67 @@
+/* Контейнер чекбокса */
+/* Лейбл как inline-flex */
+.filter-check__label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.5);
+	position: relative; /* для абсолютного позиционирования галочки */
+}
+
+/* Скрываем нативный input */
+.filter-check__input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* Кастомный квадрат */
+.filter-check__custom {
+	width: 28px;
+	height: 28px;
+	border: 1px solid rgb(0, 0, 0, 0.2);
+	border-radius: 2px;
+	background: #f9f9f9;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative; /* для галочки */
+	flex-shrink: 0;
+	transition:
+		background 0.2s,
+		border 0.2s;
+}
+
+/* Галочка по умолчанию скрыта, абсолютная внутри квадрата */
+.filter-check__custom svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 16px; /* под размер квадрата */
+	height: 16px;
+	display: none;
+}
+
+/* Когда checked — показываем галочку и меняем фон */
+.filter-check__input:checked + .filter-check__custom svg {
+    color: rgb(0, 0, 0, 0.8);
+	display: block;
+}
+
+/* Текст рядом */
+.filter-check__text {
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.5);
+	line-height: 1;
+}
+
+/* Кол-во рядом */
+.filter-check__count {
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.3);
+	line-height: 1;
+}

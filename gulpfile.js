@@ -9,7 +9,6 @@ import { copyRootFiles } from './gulp/tasks/copy-root-files.js';
 import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
 import { scss } from './gulp/tasks/scss.js';
-import { scssboot } from './gulp/tasks/scssboot.js';
 import { javascript } from './gulp/tasks/javascript.js';
 import { images } from './gulp/tasks/images.js';
 import { svg } from './gulp/tasks/svg.js';
@@ -29,7 +28,6 @@ const handleServer = server.bind(null, browserSyncInstance);
 
 const handleHTML = html.bind(null, isBuild, browserSyncInstance);
 const handleSCSS = scss.bind(null, isBuild, browserSyncInstance);
-const handleSCSSboot = scssboot.bind(null, isBuild, browserSyncInstance);
 const handleJS = javascript.bind(null, !isBuild, browserSyncInstance);
 const handleImages = images.bind(null, isBuild, browserSyncInstance);
 const handleSvg = svg.bind(null, isBuild, browserSyncInstance);
@@ -39,8 +37,7 @@ const handleSvg = svg.bind(null, isBuild, browserSyncInstance);
  */
 function watcher() {
   gulp.watch(filePaths.watch.html, handleHTML);
-  gulp.watch(filePaths.watch.scss, handleSCSS);
-  gulp.watch(filePaths.watch.scss, handleSCSSboot);
+  gulp.watch(filePaths.watch.scss, handleSCSS);  
   gulp.watch(filePaths.watch.js, handleJS);
   gulp.watch(filePaths.watch.images, handleImages);
   gulp.watch(filePaths.watch.svg, handleSvg);
@@ -54,7 +51,7 @@ const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 /**
  * Параллельные задачи в режиме разработки
  * */
-const devTasks = gulp.parallel(copyRootFiles, createSvgSprite, handleHTML, handleSCSS, handleSCSSboot, handleJS, handleImages, handleSvg);
+const devTasks = gulp.parallel(copyRootFiles, createSvgSprite, handleHTML, handleSCSS,handleJS, handleImages, handleSvg);
 
 /**
  * Основные задачи

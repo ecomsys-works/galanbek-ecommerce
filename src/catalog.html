@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
-	@@include('html/components/head.html', { 'title': 'Каталог' })
+	@@include('html/components/head.html', { 'title': 'Катaлог' })
 
-	<body>
+	<body id="catalog-page">
+		<div class="overlay" data-overlay></div>
 		<div class="wrapper">
 			@@include('html/parts/header.html')
 			<main class="main">
-				<div class="container">
-					Каталог
-				</div>
+				@@include('html/components/breadcrumbs/breadcrumbs-catalog.html') 
+
+				@@include('html/sections/catalog/highlights.html')
+				
+				@@include('html/sections/catalog/catalog.html')
 			</main>
 			@@include('html/parts/footer.html')
 		</div>

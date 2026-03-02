@@ -1,0 +1,61 @@
+/* =========================================================
+   Breadcrumbs
+   ========================================================= */
+
+.breadcrumbs {
+	background: #f3f3f3;
+	padding: 12px 0;
+
+	@include md {
+		padding: 28px 0;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 15px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: #000;
+
+		font-size: 14px;
+		@include md {
+			font-size: 16px;
+		}
+	}
+
+	&__separator {
+		color: rgba(0, 0, 0, 0.5);
+		user-select: none;
+	}
+
+	/* Ссылка (серенькая) */
+	&__link {
+		text-decoration: none;
+		transition:
+			color 0.2s ease,
+			opacity 0.2s ease;
+		color: rgba(0, 0, 0, 0.5);
+
+		&:hover {
+			color: #000;
+			opacity: 0.8;
+		}
+	}
+
+	/* Текущая страница (чёрная) */
+	&__current {
+		color: #000;
+		font-weight: 500;
+	}
+}

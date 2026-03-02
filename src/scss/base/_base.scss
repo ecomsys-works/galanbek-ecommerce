@@ -6,6 +6,7 @@ html {
 	opacity: 0.5;
 	scroll-behavior: smooth;
 	transition: var(--transition);
+	scrollbar-gutter: stable;
 
 	&.loaded {
 		opacity: 1;
@@ -30,6 +31,7 @@ body {
 	background: #f4f4f4;
 	// overflow-x: hidden;
 }
+
 
 .container {
 	min-width: 320px;
@@ -67,7 +69,8 @@ svg.icon {
 	min-block-size: 100%;
 
 	/** Поменять на clip - если используется в проекте position: sticky */
-	overflow: hidden;
+	position: relative;
+	overflow: clip;
 	flex-direction: column;
 }
 

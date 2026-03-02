@@ -1,0 +1,143 @@
+/*==========================================================================================================================
+   noUiSlider Custom Style
+===========================================================================================================================*/
+
+.filter-price__boxes {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	height: 42px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: #f9f9f9;
+}
+
+.filter-price__box {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 100%;
+	letter-spacing: -0.02em;
+	color: rgb(0, 0, 0, 0.4);
+}
+
+.filter-price__box span {
+	line-height: 1;
+}
+
+.filter-price__slider {
+	--track-height: 4px;
+	--handle-size: 24px;
+
+	margin-top: 15px;
+	width: calc(100% - var(--handle-size));
+	margin-inline: auto;
+	margin-bottom: 25px;
+}
+
+/* Трек */
+.filter-price__slider.noUi-target {
+	position: relative;
+	height: var(--track-height);
+	border-radius: 20px;
+	background: #e9ecef;
+	border: none;
+	box-shadow: none;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: calc(var(--handle-size) / -2);
+		content: "";
+		height: var(--track-height);
+		width: var(--handle-size);
+		background: #e9ecef;
+		border-radius: 20px;
+	}
+
+	&:after {
+		position: absolute;
+		top: 0;
+		right: calc(var(--handle-size) / -2);
+		content: "";
+		height: var(--track-height);
+		width: var(--handle-size);
+		background: #e9ecef;
+		border-radius: 20px;
+	}
+}
+
+/* Активная часть */
+.filter-price__slider .noUi-connect {
+	background: #b584d3;
+}
+
+/* Бегунок */
+.filter-price__slider .noUi-handle {
+	width: var(--handle-size);
+	height: var(--handle-size);
+	border-radius: 50%;
+	background: #b584d3;
+	box-shadow: initial !important;
+
+	top: 50%;
+	transform: translateY(-35%);
+	margin-right: calc(var(--handle-size) / 5); /* ← универсально */
+	cursor: pointer;
+}
+
+.filter-price__slider .noUi-handle.noUi-handle-lower::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -45%);
+  content: "";
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+}
+
+.filter-price__slider .noUi-handle.noUi-handle-upper::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -45%);
+  content: "";
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+}
+/* Убираем стандартные полоски внутри */
+
+.filter-price__slider .noUi-handle:after {
+	display: none;
+}
+
+.filter-price__slider .noUi-handle {
+	overflow: visible;
+}
+
+/* Tooltip (цифры) */
+.filter-price__slider .noUi-tooltip {
+	position: absolute;
+	top: 85%; /* ставим под бегунок */
+	left: 50%;
+	transform: translate(-50%, 10px); /* центр + отступ 10px вниз */
+
+	background: transparent;
+	border: none;
+	box-shadow: none;
+
+	font-size: 10px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.4);
+
+	padding: 0;
+	white-space: nowrap;
+}

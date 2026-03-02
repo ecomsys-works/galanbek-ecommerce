@@ -1,0 +1,61 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+CATALOG PRODUCTS SECTION
+--------------------------------------------------------------------------------------------------------------------------------*/
+.catalog {
+	@include sm {
+		background: white;
+	}
+	@include lg {
+		background-color: transparent;
+	}
+
+	padding-bottom: 100px;
+	@include xxxl {
+		padding-bottom: 150px;
+	}
+
+	&__title {
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: var(--black);
+
+		text-align: left;
+
+		font-weight: 500;
+		font-size: 28px;
+		margin-bottom: 25px;
+
+		@include sm {
+			display: none;
+		}
+
+		@include xxl {
+			display: block;
+			font-weight: 600;
+			font-size: 50px;
+		}
+	}
+
+	// Группа слектов сортировки
+	&__sorts-group {
+		position: relative;		
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 15px;
+		z-index: 10;
+
+		@include lg {
+			justify-content: start;
+			margin-bottom: 0;
+			gap: 20px;
+			padding: 20px 0;
+			z-index: 500;
+		}
+		
+		@include xxxl {
+			padding: 23px 0;
+		}
+	}
+}

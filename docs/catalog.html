@@ -5,176 +5,175 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Каталог</title>
+    <title>Катaлог</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css">
 
-    <link rel="stylesheet" href="./css/boot.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
 
 </head>
 
 
 
-<body>
+<body id="catalog-page">
+    <div class="overlay" data-overlay></div>
     <div class="wrapper">
         <header class="header">
-            <div class="container">
-                <div class="header__inner">
+            <div class="header__equlizer">
+                <div class="container">
+                    <div class="header__inner">
+                        <!-- ================= LEFT BLOCK ================= -->
+                        <div class="header__left">
+                            <a href="home.html" class="header__logo">
+                                <img class="img-responsive" src="./images/webp/logo-dark.webp" alt="Logo">
+                            </a>
+                        </div>
 
-                    <!-- ================= LEFT BLOCK ================= -->
-                    <div class="header__left">
-                        <a href="/" class="header__logo">
-                            <img class="img-responsive" src="./images/webp/logo-dark.webp" alt="Logo">
-                        </a>
-                    </div>
+                        <!-- ================= NAVIGATION ================= -->
+                        <nav class="header__nav nav">
+                            <ul class="nav__list">
+                                <!-- Каталог с выпадающим меню -->
+                                <li class="nav__item nav__item--has-dropdown">
+                                    <a href="catalog.html">
+                                        <span>Каталог</span>
+                                        <svg class="icon icon--header-caret nav__caret">
+                                            <use href="./icons/symbol/sprite.svg#caret"></use>
+                                        </svg>
+                                    </a>
 
-                    <!-- ================= NAVIGATION ================= -->
-                    <nav class="header__nav nav">
-                        <ul class="nav__list">
+                                    <!-- Dropdown -->
+                                    <ul class="scrollbar-none nav__dropdown">
+                                        <!-- iPhone -->
+                                        <li class="nav__item nav__item--has-children">
+                                            <a href="#">
+                                                Apple iPhone
+                                                <svg class="icon icon--canvas-caret-right">
+                                                    <use href="./icons/symbol/sprite.svg#caret-right"></use>
+                                                </svg>
+                                            </a>
 
-                            <!-- Каталог с выпадающим меню -->
-                            <li class="nav__item nav__item--has-dropdown">
-                                <a href="#">
-                                    <span>Каталог</span>
-                                    <svg class="icon icon--header-caret nav__caret">
-                                        <use href="./icons/symbol/sprite.svg#caret"></use>
-                                    </svg>
-                                </a>
+                                            <ul class="scrollbar-none nav__sub-dropdown">
+                                                <li class="nav__item"><a href="#">iPhone 17 Pro Max</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 17 Pro</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 17</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 17 Air</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 16 Pro Max</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 16 Pro</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 16</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 16 Plus</a></li>
+                                                <li class="nav__item"><a href="#">iPhone 16 E</a></li>
+                                            </ul>
+                                        </li>
 
-                                <!-- Dropdown -->
-                                <ul class="scrollbar-none nav__dropdown">
+                                        <!-- MacBook -->
+                                        <li class="nav__item nav__item--has-children">
+                                            <a href="#">
+                                                Apple MacBook
+                                                <svg class="icon icon--canvas-caret-right">
+                                                    <use href="./icons/symbol/sprite.svg#caret-right"></use>
+                                                </svg>
+                                            </a>
 
-                                    <!-- iPhone -->
-                                    <li class="nav__item nav__item--has-children">
-                                        <a href="#">
-                                            Apple iPhone
-                                            <svg class="icon icon--canvas-caret-right">
-                                                <use href="./icons/symbol/sprite.svg#caret-right"></use>
-                                            </svg>
-                                        </a>
+                                            <ul class="scrollbar-none nav__sub-dropdown">
+                                                <li><a href="#">MacBook Air</a></li>
+                                                <li><a href="#">MacBook Pro</a></li>
+                                            </ul>
+                                        </li>
 
-                                        <ul class="scrollbar-none nav__sub-dropdown">
-                                            <li class="nav__item"><a href="#">iPhone 17 Pro Max</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 17 Pro</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 17</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 17 Air</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 16 Pro Max</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 16 Pro</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 16</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 16 Plus</a></li>
-                                            <li class="nav__item"><a href="#">iPhone 16 E</a></li>
-                                        </ul>
-                                    </li>
+                                        <!-- Остальные пункты -->
+                                        <li><a href="#">Apple AirPods</a></li>
+                                        <li><a href="#">Apple Watch</a></li>
+                                        <li><a href="#">Apple iPad</a></li>
+                                        <li><a href="#">Аксессуары</a></li>
+                                    </ul>
+                                </li>
 
-                                    <!-- MacBook -->
-                                    <li class="nav__item nav__item--has-children">
-                                        <a href="#">
-                                            Apple MacBook
-                                            <svg class="icon icon--canvas-caret-right">
-                                                <use href="./icons/symbol/sprite.svg#caret-right"></use>
-                                            </svg>
-                                        </a>
+                                <!-- Простые пункты меню -->
+                                <li class="nav__item"><a href="#">Доставка и оплата</a></li>
+                                <li class="nav__item"><a href="#">Гарантия</a></li>
+                                <li class="nav__item"><a href="#">Trade-in</a></li>
+                                <li class="nav__item"><a href="#">О компании</a></li>
+                                <li class="nav__item"><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
 
-                                        <ul class="scrollbar-none nav__sub-dropdown">
-                                            <li><a href="#">MacBook Air</a></li>
-                                            <li><a href="#">MacBook Pro</a></li>
-                                        </ul>
-                                    </li>
+                        <!-- ================= RIGHT BLOCK ================= -->
+                        <div class="header__right">
+                            <!-- Локация -->
+                            <button class="header__icon-btn header__location">
+                                <svg class="icon icon--header-marker">
+                                    <use href="./icons/symbol/sprite.svg#marker"></use>
+                                </svg>
+                                <span>Москва</span>
+                            </button>
 
-                                    <!-- Остальные пункты -->
-                                    <li><a href="#">Apple AirPods</a></li>
-                                    <li><a href="#">Apple Watch</a></li>
-                                    <li><a href="#">Apple iPad</a></li>
-                                    <li><a href="#">Аксессуары</a></li>
-                                </ul>
-                            </li>
+                            <!-- Поиск -->
+                            <button class="header__icon-btn">
+                                <svg class="icon icon--header-search" id="header-search-btn">
+                                    <use href="./icons/symbol/sprite.svg#search"></use>
+                                </svg>
+                            </button>
 
-                            <!-- Простые пункты меню -->
-                            <li class="nav__item"><a href="#">Доставка и оплата</a></li>
-                            <li class="nav__item"><a href="#">Гарантия</a></li>
-                            <li class="nav__item"><a href="#">Trade-in</a></li>
-                            <li class="nav__item"><a href="#">О компании</a></li>
-                            <li class="nav__item"><a href="#">Контакты</a></li>
-                        </ul>
-                    </nav>
+                            <!-- Корзина -->
+                            <button class="header__icon-btn">
+                                <svg class="icon icon--cart">
+                                    <use href="./icons/symbol/sprite.svg#cart"></use>
+                                </svg>
+                            </button>
 
-                    <!-- ================= RIGHT BLOCK ================= -->
-                    <div class="header__right">
-
-                        <!-- Локация -->
-                        <button class="header__icon-btn header__location">
-                            <svg class="icon icon--header-marker">
-                                <use href="./icons/symbol/sprite.svg#marker"></use>
-                            </svg>
-                            <span>Москва</span>
-                        </button>
-
-                        <!-- Поиск -->
-                        <button class="header__icon-btn">
-                            <svg class="icon icon--header-search" id="header-search-btn">
-                                <use href="./icons/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
-
-                        <!-- Корзина -->
-                        <button class="header__icon-btn">
-                            <svg class="icon icon--cart">
-                                <use href="./icons/symbol/sprite.svg#cart"></use>
-                            </svg>
-                        </button>
-
-                        <!-- Бургер (мобильная версия) -->
-                        <button class="header__burger">
-                            <svg class="icon icon--burger">
-                                <use href="./icons/symbol/sprite.svg#burger"></use>
-                            </svg>
-                        </button>
-
+                            <!-- Бургер (мобильная версия) -->
+                            <button class="header__burger">
+                                <svg class="icon icon--burger">
+                                    <use href="./icons/symbol/sprite.svg#burger"></use>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
 
-        <!-- ================= SEARCH FORM ================= -->
-        <div class="container">
+            <!-- ================= SEARCH FORM ================= -->
             <section id="search-form" class="search-block">
-                <!-- Верхний ряд: форма поиска -->
-                <form class="search-block__top" action="#" method="GET">
-                    <div class="search-block__input-wrapper">
-                        <input type="text" class="search-block__input" placeholder="Поиск..." name="query">
+                <div class="container">
+                    <div class="search-block__wrap">
+                        <!-- Верхний ряд: форма поиска -->
+                        <form class="search-block__top" action="#" method="GET">
+                            <div class="search-block__input-wrapper">
+                                <input type="text" class="search-block__input" placeholder="Поиск..." name="query">
 
-                        <!-- Кнопка поиска -->
-                        <button type="submit" class="search-block__button">
-                            <svg class="icon icon-search-search">
-                                <use href="./icons/symbol/sprite.svg#search"></use>
-                            </svg>
-                        </button>
+                                <!-- Кнопка поиска -->
+                                <button type="submit" class="search-block__button">
+                                    <svg class="icon icon-search-search">
+                                        <use href="./icons/symbol/sprite.svg#search"></use>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Кнопка очистки -->
+                            <button type="button" class="search-block__clear">
+                                <svg class="icon icon--search-clear">
+                                    <use href="./icons/symbol/sprite.svg#close"></use>
+                                </svg>
+                            </button>
+                        </form>
+
+                        <!-- Нижний ряд: теги -->
+                        <div class="search-block__tags">
+                            <button type="button" class="search-block__tag">iPhone 17</button>
+                            <button type="button" class="search-block__tag">iPhone 17 Pro Max</button>
+                            <button type="button" class="search-block__tag">iPhone 17 Air</button>
+                            <button type="button" class="search-block__tag">MacBook M4</button>
+                        </div>
                     </div>
-
-                    <!-- Кнопка очистки -->
-                    <button type="button" class="search-block__clear">
-                        <svg class="icon icon--search-clear">
-                            <use href="./icons/symbol/sprite.svg#close"></use>
-                        </svg>
-                    </button>
-                </form>
-
-                <!-- Нижний ряд: теги -->
-                <div class="search-block__tags">
-                    <button type="button" class="search-block__tag">iPhone 17</button>
-                    <button type="button" class="search-block__tag">iPhone 17 Pro Max</button>
-                    <button type="button" class="search-block__tag">iPhone 17 Air</button>
-                    <button type="button" class="search-block__tag">MacBook M4</button>
                 </div>
             </section>
 
-        </div>
+        </header>
 
         <!-- ================= OFFCANVAS MOBILE MENU ================= -->
         <div class="offcanvas" id="mobileMenu">
             <div class="offcanvas__inner">
-
                 <!-- Закрытие -->
                 <button class="offcanvas__close">
                     <svg class="icon icon--canvas-close">
@@ -185,7 +184,6 @@
                 <!-- Меню -->
                 <div class="scrollbar-none offcanvas__overflow">
                     <ul class="offcanvas__menu">
-
                         <!-- Каталог -->
                         <li class="offcanvas__item offcanvas__item--has-children">
                             <div class="offcanvas__link">
@@ -221,10 +219,150 @@
                 </div>
             </div>
         </div>
+
         <main class="main">
-            <div class="container">
-                Каталог
-            </div>
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <div class="container">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item">
+                            <a href="/" class="breadcrumbs__link">Главная</a>
+                        </li>
+
+                        <li class="breadcrumbs__separator">/</li>
+
+                        <li class="breadcrumbs__item">
+                            <span class="breadcrumbs__current">Каталог</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <section class="highlights">
+                <div class="container">
+                    <div class="highlights__grid">
+                        <div class="highlights__gridgroup">
+                            <a href="#" class="ibg highlights-card">
+                                <img src="./images/webp/categories-highlights/popular.webp" alt="">
+                                <h3 class="highlights-card__title">
+                                    <span>Популярное</span>
+                                    <span class="highlights-card__button" aria-label="Перейти">
+                                        <svg class="icon icon--component">
+                                            <use href="./icons/symbol/sprite.svg#component"></use>
+                                        </svg>
+                                    </span>
+                                </h3>
+                            </a>
+
+                            <a href="#" class="ibg highlights-card">
+                                <img src="./images/webp/categories-highlights/new.webp" alt="">
+                                <h3 class="highlights-card__title">
+                                    <span>Новинки</span>
+                                    <span class="highlights-card__button" aria-label="Перейти">
+                                        <svg class="icon icon--component">
+                                            <use href="./icons/symbol/sprite.svg#component"></use>
+                                        </svg>
+                                    </span>
+                                </h3>
+                            </a>
+                        </div>
+
+                        <div class="highlights__gridgroup">
+                            <a href="#" class="ibg highlights-card">
+                                <img src="./images/webp/categories-highlights/akcii-desktop.webp" alt="">
+                                <h3 class="highlights-card__title">
+                                    <span>Акции</span>
+                                    <span class="highlights-card__button" aria-label="Перейти">
+                                        <svg class="icon icon--component">
+                                            <use href="./icons/symbol/sprite.svg#component"></use>
+                                        </svg>
+                                    </span>
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="categories categories--catalog">
+                <div class="container">
+                    <div class="categories__grid">
+                        <!-- 1 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/ApplePhone.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Apple iPhone</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                        <!-- 2 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/AppleMacBook.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Apple MacBook</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                        <!-- 3 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/AppleIpad.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Apple iPad</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                        <!-- 4 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/AppleWatch.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Apple Watch</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                        <!-- 5 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/AppleAirPods.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Apple AirPods</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                        <!-- 6 -->
+                        <a href="catalog-categories.html" class="ibg categories-card">
+                            <img src="./images/webp/categories/acessories.webp" alt="">
+                            <h3 class="categories-card__title">
+                                <span>Aксессуары</span>
+                                <span class="categories-card__button" aria-label="Перейти">
+                                    <svg class="icon icon--component">
+                                        <use href="./icons/symbol/sprite.svg#component"></use>
+                                    </svg>
+                                </span>
+                            </h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
         </main>
         <footer class="footer">
             <div class="container">
@@ -234,7 +372,7 @@
                     <div class="footer__left">
                         <div class="footer__left-group">
                             <!-- Логотип -->
-                            <a href="/" class="footer__logo">
+                            <a href="home.html" class="footer__logo">
                                 <img class="img-responsive" src="./images/webp/logo-light.webp" alt="Logo">
                             </a>
 
@@ -343,6 +481,8 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+
     <script src="./js/main.min.js"></script>
 
 </body>

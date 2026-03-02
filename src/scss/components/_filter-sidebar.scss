@@ -1,0 +1,145 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+Sidebar
+ --------------------------------------------------------------------------------------------------------------------------------*/
+.sidebar {
+	max-height: calc(100vh - 54px);
+	overflow-y: auto;
+	@include lg {
+		position: sticky;
+		top: 54px;
+	}
+	@include xxl {
+		max-height: calc(100vh - 105px);
+		top: 104px;
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+FILTER
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* --- Общий контейнер --- */
+.filter-s {
+	width: 100%; /* можно подстроить под дизайн */
+	background: #fff;
+	font-family: sans-serif;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	border-left: 1px solid rgba(0, 0, 0, 0.2);
+	border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* --- Кнопки --- */
+.filter-s-header {
+	width: 100%;
+	padding: 15px;
+	background: transparent;
+	border: none;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	font-size: 16px;
+
+	&--parent {
+		color: black;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	}
+}
+
+.filter-s-group {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* --- Дочерние контенты --- */
+/* Контент */
+.filter-s-content {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s ease;
+	padding: 0 15px; /* только горизонтальный */
+}
+
+.filter-s-inner {
+	padding-bottom: 10px; /* вертикальный padding внутри */
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* --- Общий стиль секций --- */
+.filter-s-section {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* Когда активен — добавим отступ снизу */
+
+.filter-s-section.parent > .filter-s-header .caret {
+	transition: transform 0.3s ease;	
+	color: rgb(0, 0, 0, 0.5);
+}
+.filter-s-section .filter-s-section:last-child{
+	border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.filter-s-section.parent.active > .filter-s-header .caret {
+	transform: rotate(180deg);
+	color: rgb(0, 0, 0, 1);
+}
+.filter-s-caret {
+	transition: transform 0.3s ease;
+	color: rgb(0, 0, 0, 0.5);
+	font-size: 8px;
+	margin-right: 4px;
+}
+.filter-s-label {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: -0.02em;
+
+	&--parent {
+		@include xxxl {
+			font-size: 24px;
+		}
+	}
+}
+
+.filter-s-section.child.active .filter-s-caret {
+	transform: rotate(180deg);
+	color: rgb(0, 0, 0, 1);
+}
+
+.filter-s-section.child .filter-s-label {
+	color: rgb(0, 0, 0, 0.5);
+}
+.filter-s-section.child.active .filter-s-label {
+	color: rgb(0, 0, 0, 1);
+}
+
+/*===============================================
+Иконки
+=================================================*/
+// иконка фильтра
+.icon--filter-s {
+	width: 18px;
+	height: 18px;
+}
+@include xxxl {
+	.icon--filter-s {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+// иконка каретки
+.icon--caret-s {
+	width: 13px;
+	height: 7px;
+}
+@include xxxl {
+	.icon--caret-s {
+		width: 14px;
+		height: 8px;
+	}
+}
