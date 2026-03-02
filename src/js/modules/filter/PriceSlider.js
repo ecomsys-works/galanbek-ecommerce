@@ -36,6 +36,8 @@ export function initPriceSliders({
     }
   });
 
+  const sliderEntity = slider.noUiSlider;
+
   // Обновление лейблов при движении бегунка
   slider.noUiSlider.on("update", (values) => {
     const min = Number(values[0]);
@@ -47,14 +49,11 @@ export function initPriceSliders({
   });
 
   // Действия при окончании движения бегунка
-  slider.noUiSlider.on("change", (values) => {
-    const currentMin = Number(values[0]);
-    const currentMax = Number(values[1]);
+  // slider.noUiSlider.on("change", (values) => {
+  //   const currentMin = Number(values[0]);
+  //   const currentMax = Number(values[1]);
 
-    console.log("Выбран диапазон:", formatNumber(currentMin), formatNumber(currentMax));
+  // });
 
-    // Тут можно триггерить фильтрацию товаров
-    // Например:
-    // filterProductsByPrice(currentMin, currentMax);
-  });
+  return sliderEntity
 }

@@ -1,10 +1,11 @@
 export function breadcrumbsColorizator(options = {}) {
-  const color = options.col || '#fff';
+  const pag = options?.page || 'catalog-products-page';
+  const color = options.color || '#fff';
   const sb = options.startBreakpoint ? Number(options.startBreakpoint) : 576;
   const eb = options.endBreakpoint ? Number(options.endBreakpoint) : 992;
 
   // Находим контейнер с айдишником страницы
-  const page = document.getElementById('catalog-products-page');
+  const page = document.getElementById(pag);
   if (!page) return; // если такой страницы нет — выходим
 
   // Находим элемент хлебных крошек
