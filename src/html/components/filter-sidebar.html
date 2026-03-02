@@ -30,10 +30,10 @@
 						<div class="filter-price">
 							<div class="filter-price__boxes">
 								<div class="filter-price__box">
-									<span id="price-min-label">68390</span>
+									<span id="price-s-min-label">68390</span>
 								</div>
 								<div class="filter-price__box">
-									<span id="price-max-label">140990</span>
+									<span id="price-s-max-label">140990</span>
 								</div>
 							</div>
 							<div id="price-slider-s" class="filter-price__slider"></div>
@@ -55,7 +55,12 @@
 						<!-- 1 -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input type="checkbox" class="filter-check__input" />
+								<input 
+								type="checkbox" 
+								class="filter-check__input" 
+								data-filter-group="memory"
+								value="256"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -68,7 +73,12 @@
 						<!-- 2 -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input type="checkbox" class="filter-check__input" />
+								<input 
+								type="checkbox" 
+								class="filter-check__input"
+								data-filter-group="memory"
+								value="512"
+								 />
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -77,20 +87,7 @@
 								<span class="filter-check__text">512</span>
 								<span class="filter-check__count">(5)</span>
 							</label>
-						</div>
-						<!-- 3 -->
-						<div class="filter-check">
-							<label class="filter-check__label">
-								<input type="checkbox" class="filter-check__input" />
-								<span class="filter-check__custom">
-									<svg class="icon--checkmark-small">
-										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
-									</svg>
-								</span>
-								<span class="filter-check__text">1024</span>
-								<span class="filter-check__count">(3)</span>
-							</label>
-						</div>
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -106,7 +103,12 @@
 						<!-- iPhone 14 -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="model"
+								value="iPhone 14"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -118,7 +120,12 @@
 						<!-- iPhone 13 -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 								
+								class="filter-check__input filter-checkbox"
+								type="checkbox" 
+								data-filter-group="model"
+								value="iPhone 13"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -130,7 +137,12 @@
 						<!-- iPhone 12 -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="model"
+								value="iPhone 12"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -154,7 +166,12 @@
 						<!-- Черный -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox"
+								data-filter-group="color"
+								value="Черный"
+								 />
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -166,7 +183,12 @@
 						<!-- Белый -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="color"
+								value="Белый"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -178,7 +200,12 @@
 						<!-- Оранжевый -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="color"
+								value="Оранжевый"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -202,7 +229,12 @@
 						<!-- Single SIM -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="sim"
+								value="Single SIM"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -214,7 +246,12 @@
 						<!-- Dual SIM -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="sim"
+								value="Dual SIM"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>
@@ -226,7 +263,12 @@
 						<!-- eSIM -->
 						<div class="filter-check">
 							<label class="filter-check__label">
-								<input class="filter-check__input filter-checkbox" type="checkbox" />
+								<input 
+								class="filter-check__input filter-checkbox" 
+								type="checkbox" 
+								data-filter-group="sim"
+								value="eSIM"
+								/>
 								<span class="filter-check__custom">
 									<svg class="icon--checkmark-small">
 										<use href="./icons/symbol/sprite.svg#checkmark-small"></use>

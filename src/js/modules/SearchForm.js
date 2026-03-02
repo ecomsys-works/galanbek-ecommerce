@@ -84,4 +84,6 @@ export function initSearchForm() {
         input.addEventListener('focus', () => inputWrapper.classList.add('focus'));
         input.addEventListener('blur', () => inputWrapper.classList.remove('focus'));
     }
+
+    return true;
 }

@@ -1,6 +1,6 @@
-import { overlay } from "../hooks/useOverlay";
+import { overlay } from "../../hooks/useOverlay";
 
-export function initFilterCanvas() {
+export function initFilterCanvasToggle() {
 
     const filterBtn = document.getElementById('filterBtn');
     const canvas = document.getElementById('filterCanvas');

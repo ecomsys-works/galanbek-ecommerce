@@ -220,4 +220,6 @@ export function initDesktopMenu(options) {
             scheduleMainClose(item, dropdown); // мышь ушла из dropdown — запускаем таймер
         });
     });
+
+    return true;
 }

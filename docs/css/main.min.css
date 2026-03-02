@@ -1323,6 +1323,9 @@ RELATED PRODUCTS SECTION
   font-weight: 500;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------
+УНИВЕРСАЛЬНАЯ КНОПКА (ВАРИАНТЫ)
+ --------------------------------------------------------------------------------------------------------------------------------*/
 .btn {
   position: relative;
   display: inline-flex;
@@ -1448,7 +1451,7 @@ RELATED PRODUCTS SECTION
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------
-CATALOG CARD
+КАРТОЧКА КАТЕГОРИИ
 --------------------------------------------------------------------------------------------------------------------------------*/
 .categories-card {
   display: block;
@@ -1507,6 +1510,225 @@ CATALOG CARD
   color: #fff;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------
+КАРТОЧКА ТОВАРА \ PRODUCT CARD
+--------------------------------------------------------------------------------------------------------------------------------*/
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* ---------------- Image Wrapper ---------------- */
+  /* ---------------- Content ---------------- */
+}
+.product-card__image-wrapper {
+  position: relative;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.8125rem;
+  background: #fff;
+  aspect-ratio: 1/1;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  /* Hover эффект: масштаб изображения */
+  transition: transform 0.4s ease;
+}
+.product-card__image-wrapper:hover .product-card__image {
+  transform: scale(1.05);
+}
+.product-card__image {
+  block-size: 100%;
+  inline-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* плавный переход для hover */
+}
+.product-card__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* растягиваем */
+  justify-content: space-between;
+  padding-top: 0.625rem;
+}
+.product-card__group {
+  margin-top: auto; /* прижимает к низу */
+}
+.product-card__title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  font-size: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+.product-card__title a {
+  color: #000;
+  text-decoration: none;
+}
+.product-card__price {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  font-size: 0.6875rem;
+}
+.product-card__button {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+/* =========================================================
+   КАРТОЧКА ПРОМО \ Promo Card
+   ========================================================= */
+.promo-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.625rem;
+  padding-inline: 0.625rem;
+  padding-bottom: 0.625rem;
+  transition: transform 0.3s ease;
+  /* ================= CONTENT ================= */
+  /* ================= TITLE ================= */
+  /* ================= PRICE ================= */
+  /* ================= SIZE MODIFIERS ================= */
+  /* ================= BUTTON ================= */
+  /* ================= LABEL ================= */
+}
+.promo-card:hover {
+  transform: scale(1.01);
+}
+.promo-card__content {
+  position: relative;
+  z-index: 2;
+}
+.promo-card__title {
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.promo-card__price {
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-size: 0.875rem;
+}
+.promo-card--large, .promo-card--top, .promo-card--bottom {
+  padding-top: 0.625rem;
+}
+.promo-card--large .promo-card__button {
+  top: 0.625rem;
+}
+.promo-card--top .promo-card__button {
+  top: 0.625rem;
+}
+.promo-card--bottom .promo-card__button {
+  top: 0.625rem;
+}
+.promo-card__button {
+  position: absolute;
+  right: 0.625rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.promo-card__button svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.promo-card__button:hover {
+  background: #000;
+  color: #fff;
+}
+.promo-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6875rem;
+  height: 1.625rem;
+  border-radius: 3.5rem;
+  border: 0.035rem solid #fff;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-size: 0.75rem;
+  background: #fff;
+  color: var(--black);
+  z-index: 2;
+}
+.promo-card__label img {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+КАРТОЧКА "ПОЧЕМУ ВЫБИРАЮТ НАС" \ TRUST CARD
+--------------------------------------------------------------------------------------------------------------------------------*/
+.trust-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.25rem;
+  border-radius: 1.0625rem;
+  overflow: hidden;
+  background-color: #5e4b8b; /* фиолетовый fallback */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 37/24;
+  color: #fff;
+}
+.trust-card__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+.trust-card__title {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  font-size: 1.25rem;
+}
+.trust-card__number {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: rgba(244, 244, 244, 0.7);
+  font-size: 1.6875rem;
+}
+.trust-card__text {
+  position: relative;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  max-width: 60%;
+  font-size: 0.875rem;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+КНОПКИ ДЛЯ ФИЛЬТРА (МОБИЛЬНЫЕ)
+ --------------------------------------------------------------------------------------------------------------------------------*/
 /* Мобильная версия — mobile first */
 .filter-toggle,
 .filter-sorting {
@@ -1540,6 +1762,9 @@ CATALOG CARD
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------
+МОБИЛЬНЫЙ ФИЛЬТР
+ --------------------------------------------------------------------------------------------------------------------------------*/
 .filter-c {
   position: fixed;
   top: 0;
@@ -1653,6 +1878,7 @@ CATALOG CARD
 }
 
 .filter-c-item {
+  cursor: pointer;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 100%;
@@ -1663,7 +1889,11 @@ CATALOG CARD
 }
 .filter-c-item.active {
   color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgba(0, 0, 0, 0.025) !important;
+}
+.filter-c-item:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.01);
 }
 
 /* --- Общий стиль секций --- */
@@ -1731,6 +1961,9 @@ CATALOG CARD
   height: 0.875rem;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------
+КАСТОМНЫЙ ЧЕКБОКС ФИЛЬТРА
+ --------------------------------------------------------------------------------------------------------------------------------*/
 /* Контейнер чекбокса */
 /* Лейбл как inline-flex */
 .filter-check__label {
@@ -1797,61 +2030,15 @@ CATALOG CARD
   line-height: 1;
 }
 
-.filter {
-  width: 100%;
-  background: #fff;
-}
-
-.filter__header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.9375rem;
-  cursor: pointer;
-}
-
-.filter__section--parent {
-  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.2);
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.filter__section--child {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.filter__section.active {
-  color: #000;
-}
-
-.filter__section.active > .filter__header .filter__caret svg {
-  transform: rotate(180deg);
-}
-
-.filter__content {
-  overflow: hidden;
-  height: 0;
-  transition: height 0.3s ease;
-  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.2);
-}
-
-.filter__content-body {
-  padding: 0.9375rem;
-}
-
 /* ------------------------------------------------------------------------------------------------------------------------------
-Sidebar
+Sidebar STICKY
  --------------------------------------------------------------------------------------------------------------------------------*/
 .sidebar {
-  max-height: calc(100vh - 3.375rem);
   overflow-y: auto;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------
-FILTER
+SIDEBAR FILTER
 --------------------------------------------------------------------------------------------------------------------------------*/
 /* --- Общий контейнер --- */
 .filter-s {
@@ -1961,6 +2148,256 @@ FILTER
   width: 0.8125rem;
   height: 0.4375rem;
 }
+/*==========================================================================================================================
+  СЛАЙДЕР ЦЕН ДЛЯ ФИЛЬТРА noUiSlider 
+===========================================================================================================================*/
+.filter-price__boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.625rem;
+  height: 2.625rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+.filter-price__box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.filter-price__box span {
+  line-height: 1;
+}
+
+.filter-price__slider {
+  --track-height: 0.25rem;
+  --handle-size: 1.5rem;
+  margin-top: 0.9375rem;
+  width: calc(100% - var(--handle-size));
+  margin-inline: auto;
+  margin-bottom: 1.5625rem;
+}
+
+/* Трек */
+.filter-price__slider.noUi-target {
+  position: relative;
+  height: var(--track-height);
+  border-radius: 1.25rem;
+  background: #e9ecef;
+  border: none;
+  box-shadow: none;
+}
+.filter-price__slider.noUi-target:before {
+  position: absolute;
+  top: 0;
+  left: calc(var(--handle-size) / -2);
+  content: "";
+  height: var(--track-height);
+  width: var(--handle-size);
+  background: #e9ecef;
+  border-radius: 1.25rem;
+}
+.filter-price__slider.noUi-target:after {
+  position: absolute;
+  top: 0;
+  right: calc(var(--handle-size) / -2);
+  content: "";
+  height: var(--track-height);
+  width: var(--handle-size);
+  background: #e9ecef;
+  border-radius: 1.25rem;
+}
+
+/* Активная часть */
+.filter-price__slider .noUi-connect {
+  background: #b584d3;
+}
+
+/* Бегунок */
+.filter-price__slider .noUi-handle {
+  width: var(--handle-size);
+  height: var(--handle-size);
+  border-radius: 50%;
+  background: #b584d3;
+  box-shadow: initial !important;
+  top: 50%;
+  transform: translateY(-35%);
+  margin-right: calc(var(--handle-size) / 5); /* ← универсально */
+  cursor: pointer;
+}
+
+.filter-price__slider .noUi-handle.noUi-handle-lower::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -45%);
+  content: "";
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #fff;
+}
+
+.filter-price__slider .noUi-handle.noUi-handle-upper::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -45%);
+  content: "";
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #fff;
+}
+
+/* Убираем стандартные полоски внутри */
+.filter-price__slider .noUi-handle:after {
+  display: none;
+}
+
+.filter-price__slider .noUi-handle {
+  overflow: visible;
+}
+
+/* Tooltip (цифры) */
+.filter-price__slider .noUi-tooltip {
+  position: absolute;
+  top: 85%; /* ставим под бегунок */
+  left: 50%;
+  transform: translate(-50%, 0.625rem); /* центр + отступ 10px вниз */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0;
+  white-space: nowrap;
+}
+
+/*===========================================================
+ * Скрываем нативный селект (истина, используется Core)
+ * ===========================================================*/
+.sort-native {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ===========================================================
+ * Десктопный кастомный селект
+ * ===========================================================*/
+.sort-desktop {
+  position: relative;
+  cursor: pointer;
+}
+.sort-desktop--types {
+  display: inline-block;
+}
+.sort-desktop--catalog {
+  display: none;
+}
+
+.sort-desktop__current {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  padding: 0.3125rem 0.75rem 0.3125rem 0.1875rem;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Каретка стрелочки */
+.sort-desktop__caret {
+  font-size: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+/* ===========================================================
+ * Выпадающий список
+ * ===========================================================*/
+.sort-desktop__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
+  list-style: none;
+  opacity: 0;
+  transform: translateY(0.625rem);
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+/* Варианты ширины dropdown */
+.sort-desktop__dropdown--default {
+  min-width: 14.8125rem;
+}
+
+.sort-desktop__dropdown--short {
+  min-width: 11.0625rem;
+}
+
+/* ===========================================================
+ *  Hover эффекты для открытия
+ * ===========================================================*/
+.sort-desktop:hover .sort-desktop__current {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+
+.sort-desktop:hover .sort-desktop__dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sort-desktop:hover .sort-desktop__caret {
+  transform: rotate(180deg);
+}
+
+/* ===========================================================
+ * Элементы списка
+ * ===========================================================*/
+.sort-desktop__dropdown li {
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  white-space: nowrap; /* текст не переносится */
+}
+
+.sort-desktop__dropdown li.active,
+.sort-desktop__dropdown li:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgb(0, 0, 0);
+}
+
 /* =========================
    Header navigation (меню в шапке сайта)
 ========================= */
@@ -2162,310 +2599,6 @@ FILTER
 /* =========================
    Адаптивное отображение
 ========================= */
-/*==========================================================================================================================
-   noUiSlider Custom Style
-===========================================================================================================================*/
-.filter-price__boxes {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.625rem;
-  height: 2.625rem;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
-  background-color: #f9f9f9;
-}
-
-.filter-price__box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-weight: 500;
-  font-size: 0.8125rem;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.filter-price__box span {
-  line-height: 1;
-}
-
-.filter-price__slider {
-  --track-height: 0.25rem;
-  --handle-size: 1.5rem;
-  margin-top: 0.9375rem;
-  width: calc(100% - var(--handle-size));
-  margin-inline: auto;
-  margin-bottom: 1.5625rem;
-}
-
-/* Трек */
-.filter-price__slider.noUi-target {
-  position: relative;
-  height: var(--track-height);
-  border-radius: 1.25rem;
-  background: #e9ecef;
-  border: none;
-  box-shadow: none;
-}
-.filter-price__slider.noUi-target:before {
-  position: absolute;
-  top: 0;
-  left: calc(var(--handle-size) / -2);
-  content: "";
-  height: var(--track-height);
-  width: var(--handle-size);
-  background: #e9ecef;
-  border-radius: 1.25rem;
-}
-.filter-price__slider.noUi-target:after {
-  position: absolute;
-  top: 0;
-  right: calc(var(--handle-size) / -2);
-  content: "";
-  height: var(--track-height);
-  width: var(--handle-size);
-  background: #e9ecef;
-  border-radius: 1.25rem;
-}
-
-/* Активная часть */
-.filter-price__slider .noUi-connect {
-  background: #b584d3;
-}
-
-/* Бегунок */
-.filter-price__slider .noUi-handle {
-  width: var(--handle-size);
-  height: var(--handle-size);
-  border-radius: 50%;
-  background: #b584d3;
-  box-shadow: initial !important;
-  top: 50%;
-  transform: translateY(-35%);
-  margin-right: calc(var(--handle-size) / 5); /* ← универсально */
-  cursor: pointer;
-}
-
-.filter-price__slider .noUi-handle.noUi-handle-lower::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-40%, -45%);
-  content: "";
-  border-radius: 50%;
-  width: 0.625rem;
-  height: 0.625rem;
-  background: #fff;
-}
-
-.filter-price__slider .noUi-handle.noUi-handle-upper::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-40%, -45%);
-  content: "";
-  border-radius: 50%;
-  width: 0.625rem;
-  height: 0.625rem;
-  background: #fff;
-}
-
-/* Убираем стандартные полоски внутри */
-.filter-price__slider .noUi-handle:after {
-  display: none;
-}
-
-.filter-price__slider .noUi-handle {
-  overflow: visible;
-}
-
-/* Tooltip (цифры) */
-.filter-price__slider .noUi-tooltip {
-  position: absolute;
-  top: 85%; /* ставим под бегунок */
-  left: 50%;
-  transform: translate(-50%, 0.625rem); /* центр + отступ 10px вниз */
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  font-size: 0.625rem;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.4);
-  padding: 0;
-  white-space: nowrap;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------
-PRODUCT CARD
---------------------------------------------------------------------------------------------------------------------------------*/
-.product-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  /* ---------------- Image Wrapper ---------------- */
-  /* ---------------- Content ---------------- */
-}
-.product-card__image-wrapper {
-  position: relative;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.8125rem;
-  background: #fff;
-  aspect-ratio: 1/1;
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  /* Hover эффект: масштаб изображения */
-  transition: transform 0.4s ease;
-}
-.product-card__image-wrapper:hover .product-card__image {
-  transform: scale(1.05);
-}
-.product-card__image {
-  block-size: 100%;
-  inline-size: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease; /* плавный переход для hover */
-}
-.product-card__content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* растягиваем */
-  justify-content: space-between;
-  padding-top: 0.625rem;
-}
-.product-card__group {
-  margin-top: auto; /* прижимает к низу */
-}
-.product-card__title {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  font-size: 0.5rem;
-  margin-bottom: 0.625rem;
-}
-.product-card__title a {
-  color: #000;
-  text-decoration: none;
-}
-.product-card__price {
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  color: var(--black);
-  font-size: 0.6875rem;
-}
-.product-card__button {
-  width: 100%;
-  margin-top: 0.75rem;
-}
-
-/* =========================================================
-   Promo Card
-   ========================================================= */
-.promo-card {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  color: #fff;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 0.625rem;
-  padding-inline: 0.625rem;
-  padding-bottom: 0.625rem;
-  transition: transform 0.3s ease;
-  /* ================= CONTENT ================= */
-  /* ================= TITLE ================= */
-  /* ================= PRICE ================= */
-  /* ================= SIZE MODIFIERS ================= */
-  /* ================= BUTTON ================= */
-  /* ================= LABEL ================= */
-}
-.promo-card:hover {
-  transform: scale(1.01);
-}
-.promo-card__content {
-  position: relative;
-  z-index: 2;
-}
-.promo-card__title {
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-.promo-card__price {
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-size: 0.875rem;
-}
-.promo-card--large, .promo-card--top, .promo-card--bottom {
-  padding-top: 0.625rem;
-}
-.promo-card--large .promo-card__button {
-  top: 0.625rem;
-}
-.promo-card--top .promo-card__button {
-  top: 0.625rem;
-}
-.promo-card--bottom .promo-card__button {
-  top: 0.625rem;
-}
-.promo-card__button {
-  position: absolute;
-  right: 0.625rem;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.0625rem;
-  height: 2.0625rem;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--black);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-.promo-card__button svg {
-  width: 0.875rem;
-  height: 0.875rem;
-}
-.promo-card__button:hover {
-  background: #000;
-  color: #fff;
-}
-.promo-card__label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4375rem;
-  margin-bottom: 1.25rem;
-  padding: 0.6875rem;
-  height: 1.625rem;
-  border-radius: 3.5rem;
-  border: 0.035rem solid #fff;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-size: 0.75rem;
-  background: #fff;
-  color: var(--black);
-  z-index: 2;
-}
-.promo-card__label img {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
 .search-block {
   position: absolute;
   top: 100%;
@@ -2616,222 +2749,19 @@ PRODUCT CARD
     opacity: 1;
   }
 }
-/*===========================================================
- * Скрываем нативный селект (истина, используется Core)
- * ===========================================================*/
-.sort-native {
-  position: absolute;
-  width: 0.0625rem;
-  height: 0.0625rem;
-  padding: 0;
-  margin: -0.0625rem;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
 
-/* ===========================================================
- * Десктопный кастомный селект
- * ===========================================================*/
-.sort-desktop {
-  position: relative;
-  cursor: pointer;
-}
-.sort-desktop--types {
-  display: inline-block;
-}
-.sort-desktop--catalog {
-  display: none;
-}
-
-.sort-desktop__current {
-  display: flex;
-  align-items: center;
-  gap: 0.9375rem;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  padding: 0.3125rem 0.75rem 0.3125rem 0.1875rem;
-  transition: color 0.3s ease-in-out;
-}
-
-/* Каретка стрелочки */
-.sort-desktop__caret {
-  font-size: 0.5rem;
-  transition: transform 0.25s ease;
-}
-
-/* ===========================================================
- * Выпадающий список
- * ===========================================================*/
-.sort-desktop__dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  border-radius: 0.625rem;
-  padding: 0.625rem 0;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.2);
-  list-style: none;
-  opacity: 0;
-  transform: translateY(0.625rem);
-  pointer-events: none;
-  transition: 0.2s ease;
-}
-
-/* Варианты ширины dropdown */
-.sort-desktop__dropdown--default {
-  min-width: 14.8125rem;
-}
-
-.sort-desktop__dropdown--short {
-  min-width: 11.0625rem;
-}
-
-/* ===========================================================
- *  Hover эффекты для открытия
- * ===========================================================*/
-.sort-desktop:hover .sort-desktop__current {
-  background-color: #fff;
-  color: rgb(0, 0, 0);
-}
-
-.sort-desktop:hover .sort-desktop__dropdown {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.sort-desktop:hover .sort-desktop__caret {
-  transform: rotate(180deg);
-}
-
-/* ===========================================================
- * Элементы списка
- * ===========================================================*/
-.sort-desktop__dropdown li {
-  padding: 0.75rem;
-  cursor: pointer;
-  transition: background 0.15s ease;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 100%;
-  letter-spacing: -0.01em;
-  white-space: nowrap; /* текст не переносится */
-}
-
-.sort-desktop__dropdown li.active,
-.sort-desktop__dropdown li:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgb(0, 0, 0);
-}
-
-.sort-mobile {
-  display: none;
-  border-top: 0.0625rem solid rgba(0, 0, 0, 0.15);
-}
-
-.sort-mobile button {
-  width: 100%;
-  padding: 0.9375rem;
-  border: none;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.sort-mobile__caret {
-  transition: transform 0.3s ease;
-}
-
-.sort-mobile__content {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-
-.sort-mobile.active .sort-mobile__caret {
-  transform: rotate(180deg);
-}
-
-.sort-mobile ul {
-  list-style: none;
-  padding: 0 0.9375rem 0.9375rem 0.9375rem;
-  margin: 0;
-}
-
-.sort-mobile li {
-  padding: 0.5rem 0;
-  cursor: pointer;
-}
-
-.sort-mobile li:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------
-TRUST CARD
---------------------------------------------------------------------------------------------------------------------------------*/
-.trust-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 1.25rem;
-  border-radius: 1.0625rem;
-  overflow: hidden;
-  background-color: #5e4b8b; /* фиолетовый fallback */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  aspect-ratio: 37/24;
-  color: #fff;
-}
-.trust-card__header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.625rem;
-  margin-bottom: 1.25rem;
-}
-.trust-card__title {
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  font-size: 1.25rem;
-}
-.trust-card__number {
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  color: rgba(244, 244, 244, 0.7);
-  font-size: 1.6875rem;
-}
-.trust-card__text {
-  position: relative;
-  font-weight: 400;
-  line-height: 120%;
-  letter-spacing: -0.02em;
-  max-width: 60%;
-  font-size: 0.875rem;
-}
 @media (min-width: 370px){
   .header__burger {
     margin-left: 2.1875rem;
   }
 }
+
 @media (min-width: 440px){
   .trust-card__title {
     font-size: 1.875rem;
   }
 }
+
 @media (min-width: 441px){
   .footer__requisites {
     font-size: 0.625rem;
@@ -2843,6 +2773,7 @@ TRUST CARD
     font-size: 0.625rem;
   }
 }
+
 @media (min-width: 576px){
   .container,
   .container-fluid,
@@ -2990,6 +2921,7 @@ TRUST CARD
     font-size: 1rem;
   }
 }
+
 @media (min-width: 768px){
   .container,
   .container-fluid,
@@ -3099,6 +3031,7 @@ TRUST CARD
     border-radius: 1.25rem;
   }
 }
+
 @media (min-width: 992px){
   .catalog__sidebar {
     display: block;
@@ -3192,17 +3125,6 @@ TRUST CARD
     width: 1.0625rem;
     height: 1.0625rem;
   }
-  .filter-toggle,
-  .filter-sorting {
-    display: none;
-  }
-  .filter-c {
-    display: none;
-  }
-  .sidebar {
-    position: sticky;
-    top: 3.375rem;
-  }
   .product-card__content {
     padding-top: 1.5625rem;
   }
@@ -3244,15 +3166,28 @@ TRUST CARD
     width: 1.3125rem;
     height: 1.3125rem;
   }
+  .filter-toggle,
+  .filter-sorting {
+    display: none;
+  }
+  .filter-c {
+    display: none;
+  }
+  .sidebar {
+    position: sticky;
+    top: 3.375rem;
+  }
   .sort-desktop--catalog {
     display: inline-block;
   }
 }
+
 @media (min-width: 992px) and (min-width: 1680px){
   .catalog__sidebar {
     width: 21.25rem;
   }
 }
+
 @media (min-width: 1200px){
   .products__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -3327,6 +3262,7 @@ TRUST CARD
     font-size: 0.75rem;
   }
 }
+
 @media (min-width: 1400px){
   .icon--cart {
     width: 1.5rem;
@@ -3477,20 +3413,6 @@ TRUST CARD
   .categories-card__title {
     font-size: 1.875rem;
   }
-  .sidebar {
-    max-height: calc(100vh - 6.5625rem);
-    top: 6.5rem;
-  }
-  .nav__list {
-    gap: 1.5625rem;
-  }
-  .nav__item a {
-    font-size: 1.25rem;
-  }
-  .nav__dropdown a, .nav__sub-dropdown a {
-    font-size: 0.875rem;
-    padding-block: 0.625rem;
-  }
   .promo-card {
     padding-inline: 1.875rem;
     padding-bottom: 1.875rem;
@@ -3522,7 +3444,21 @@ TRUST CARD
   .trust-card__text {
     font-size: 0.8125rem;
   }
+  .sidebar {
+    top: 6.5rem;
+  }
+  .nav__list {
+    gap: 1.5625rem;
+  }
+  .nav__item a {
+    font-size: 1.25rem;
+  }
+  .nav__dropdown a, .nav__sub-dropdown a {
+    font-size: 0.875rem;
+    padding-block: 0.625rem;
+  }
 }
+
 @media (min-width: 1680px){
   .footer::after {
     width: 54.375rem;
@@ -3578,24 +3514,6 @@ TRUST CARD
     width: 1.25rem;
     height: 1.25rem;
   }
-  .filter-c-label--parent {
-    font-size: 1.5rem;
-  }
-  .icon--filter-c {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  .filter-s-label--parent {
-    font-size: 1.5rem;
-  }
-  .icon--filter-s {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  .icon--caret-s {
-    width: 0.875rem;
-    height: 0.5rem;
-  }
   .product-card__title {
     font-size: 1.25rem;
   }
@@ -3644,7 +3562,26 @@ TRUST CARD
   .trust-card__text {
     font-size: 1rem;
   }
+  .filter-c-label--parent {
+    font-size: 1.5rem;
+  }
+  .icon--filter-c {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .filter-s-label--parent {
+    font-size: 1.5rem;
+  }
+  .icon--filter-s {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .icon--caret-s {
+    width: 0.875rem;
+    height: 0.5rem;
+  }
 }
+
 @media (max-width: 1120px){
   .header__nav {
     display: none;
@@ -3656,6 +3593,7 @@ TRUST CARD
     display: block;
   }
 }
+
 @media (max-width: 440px){
   .footer__requisites {
     font-size: 0.5rem;
@@ -3667,6 +3605,7 @@ TRUST CARD
     font-size: 0.5rem;
   }
 }
+
 @media (any-hover: hover){
   .scrollbar-none::-webkit-scrollbar-thumb:hover {
     background-color: transparent;

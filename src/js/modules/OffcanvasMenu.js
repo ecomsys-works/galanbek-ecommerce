@@ -46,4 +46,6 @@ export function initOffcanvasMenu() {
       }
     });
   });
+
+  return true;
 }

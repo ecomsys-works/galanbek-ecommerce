@@ -131,7 +131,7 @@ export function initSortDesktopCore({ selectId, dropdownClass = 'default', sortT
         item.classList.toggle('active', item.dataset.value === select.value);
       });
 
-      console.log('Селект обновился: ', select.value, selectedOption);
+      // console.log('Селект обновился: ', select.value, selectedOption);
     });
 
     // инициализация при рендере
@@ -150,4 +150,5 @@ export function initSortDesktopCore({ selectId, dropdownClass = 'default', sortT
     renderUI();
   });
 
+  return select;
 }

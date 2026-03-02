@@ -26,4 +26,6 @@ export function initNewProductsSlider() {
             }
         }
     });
+
+    return newProductsSwiper;
 }
