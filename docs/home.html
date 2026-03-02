@@ -21,116 +21,112 @@
 
     <div class="wrapper">
         <header class="header">
-            <div class="header__equlizer">
-                <div class="container">
-                    <div class="header__inner">
-                        <!-- ================= LEFT BLOCK ================= -->
-                        <div class="header__left">
-                            <a href="home.html" class="header__logo">
-                                <img class="img-responsive" src="./images/webp/logo-dark.webp" alt="Logo">
-                            </a>
-                        </div>
+            <div class="container header__inner">
+                <!-- ================= LEFT BLOCK ================= -->
+                <div class="header__left">
+                    <a href="home.html" class="header__logo">
+                        <img class="img-responsive" src="./images/webp/logo-dark.webp" alt="Logo">
+                    </a>
+                </div>
 
-                        <!-- ================= NAVIGATION ================= -->
-                        <nav class="header__nav nav">
-                            <ul class="nav__list">
-                                <!-- Каталог с выпадающим меню -->
-                                <li class="nav__item nav__item--has-dropdown">
-                                    <a href="catalog.html">
-                                        <span>Каталог</span>
-                                        <svg class="icon icon--header-caret nav__caret">
-                                            <use href="./icons/symbol/sprite.svg#caret"></use>
+                <!-- ================= NAVIGATION ================= -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <!-- Каталог с выпадающим меню -->
+                        <li class="nav__item nav__item--has-dropdown">
+                            <a href="catalog.html">
+                                <span>Каталог</span>
+                                <svg class="icon icon--header-caret nav__caret">
+                                    <use href="./icons/symbol/sprite.svg#caret"></use>
+                                </svg>
+                            </a>
+
+                            <!-- Dropdown -->
+                            <ul class="scrollbar-none nav__dropdown">
+                                <!-- iPhone -->
+                                <li class="nav__item nav__item--has-children">
+                                    <a href="#">
+                                        Apple iPhone
+                                        <svg class="icon icon--canvas-caret-right">
+                                            <use href="./icons/symbol/sprite.svg#caret-right"></use>
                                         </svg>
                                     </a>
 
-                                    <!-- Dropdown -->
-                                    <ul class="scrollbar-none nav__dropdown">
-                                        <!-- iPhone -->
-                                        <li class="nav__item nav__item--has-children">
-                                            <a href="#">
-                                                Apple iPhone
-                                                <svg class="icon icon--canvas-caret-right">
-                                                    <use href="./icons/symbol/sprite.svg#caret-right"></use>
-                                                </svg>
-                                            </a>
-
-                                            <ul class="scrollbar-none nav__sub-dropdown">
-                                                <li class="nav__item"><a href="#">iPhone 17 Pro Max</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 17 Pro</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 17</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 17 Air</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 16 Pro Max</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 16 Pro</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 16</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 16 Plus</a></li>
-                                                <li class="nav__item"><a href="#">iPhone 16 E</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <!-- MacBook -->
-                                        <li class="nav__item nav__item--has-children">
-                                            <a href="#">
-                                                Apple MacBook
-                                                <svg class="icon icon--canvas-caret-right">
-                                                    <use href="./icons/symbol/sprite.svg#caret-right"></use>
-                                                </svg>
-                                            </a>
-
-                                            <ul class="scrollbar-none nav__sub-dropdown">
-                                                <li><a href="#">MacBook Air</a></li>
-                                                <li><a href="#">MacBook Pro</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <!-- Остальные пункты -->
-                                        <li><a href="#">Apple AirPods</a></li>
-                                        <li><a href="#">Apple Watch</a></li>
-                                        <li><a href="#">Apple iPad</a></li>
-                                        <li><a href="#">Аксессуары</a></li>
+                                    <ul class="scrollbar-none nav__sub-dropdown">
+                                        <li class="nav__item"><a href="#">iPhone 17 Pro Max</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 17 Pro</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 17</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 17 Air</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 16 Pro Max</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 16 Pro</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 16</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 16 Plus</a></li>
+                                        <li class="nav__item"><a href="#">iPhone 16 E</a></li>
                                     </ul>
                                 </li>
 
-                                <!-- Простые пункты меню -->
-                                <li class="nav__item"><a href="#">Доставка и оплата</a></li>
-                                <li class="nav__item"><a href="#">Гарантия</a></li>
-                                <li class="nav__item"><a href="#">Trade-in</a></li>
-                                <li class="nav__item"><a href="#">О компании</a></li>
-                                <li class="nav__item"><a href="#">Контакты</a></li>
+                                <!-- MacBook -->
+                                <li class="nav__item nav__item--has-children">
+                                    <a href="#">
+                                        Apple MacBook
+                                        <svg class="icon icon--canvas-caret-right">
+                                            <use href="./icons/symbol/sprite.svg#caret-right"></use>
+                                        </svg>
+                                    </a>
+
+                                    <ul class="scrollbar-none nav__sub-dropdown">
+                                        <li><a href="#">MacBook Air</a></li>
+                                        <li><a href="#">MacBook Pro</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Остальные пункты -->
+                                <li><a href="#">Apple AirPods</a></li>
+                                <li><a href="#">Apple Watch</a></li>
+                                <li><a href="#">Apple iPad</a></li>
+                                <li><a href="#">Аксессуары</a></li>
                             </ul>
-                        </nav>
+                        </li>
 
-                        <!-- ================= RIGHT BLOCK ================= -->
-                        <div class="header__right">
-                            <!-- Локация -->
-                            <button class="header__icon-btn header__location">
-                                <svg class="icon icon--header-marker">
-                                    <use href="./icons/symbol/sprite.svg#marker"></use>
-                                </svg>
-                                <span>Москва</span>
-                            </button>
+                        <!-- Простые пункты меню -->
+                        <li class="nav__item"><a href="#">Доставка и оплата</a></li>
+                        <li class="nav__item"><a href="#">Гарантия</a></li>
+                        <li class="nav__item"><a href="#">Trade-in</a></li>
+                        <li class="nav__item"><a href="#">О компании</a></li>
+                        <li class="nav__item"><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
 
-                            <!-- Поиск -->
-                            <button class="header__icon-btn">
-                                <svg class="icon icon--header-search" id="header-search-btn">
-                                    <use href="./icons/symbol/sprite.svg#search"></use>
-                                </svg>
-                            </button>
+                <!-- ================= RIGHT BLOCK ================= -->
+                <div class="header__right">
+                    <!-- Локация -->
+                    <button class="header__icon-btn header__location">
+                        <svg class="icon icon--header-marker">
+                            <use href="./icons/symbol/sprite.svg#marker"></use>
+                        </svg>
+                        <span>Москва</span>
+                    </button>
 
-                            <!-- Корзина -->
-                            <button class="header__icon-btn">
-                                <svg class="icon icon--cart">
-                                    <use href="./icons/symbol/sprite.svg#cart"></use>
-                                </svg>
-                            </button>
+                    <!-- Поиск -->
+                    <button class="header__icon-btn">
+                        <svg class="icon icon--header-search" id="header-search-btn">
+                            <use href="./icons/symbol/sprite.svg#search"></use>
+                        </svg>
+                    </button>
 
-                            <!-- Бургер (мобильная версия) -->
-                            <button class="header__burger">
-                                <svg class="icon icon--burger">
-                                    <use href="./icons/symbol/sprite.svg#burger"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                    <!-- Корзина -->
+                    <button class="header__icon-btn">
+                        <svg class="icon icon--cart">
+                            <use href="./icons/symbol/sprite.svg#cart"></use>
+                        </svg>
+                    </button>
+
+                    <!-- Бургер (мобильная версия) -->
+                    <button class="header__burger">
+                        <svg class="icon icon--burger">
+                            <use href="./icons/symbol/sprite.svg#burger"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
 

@@ -7,11 +7,6 @@
 	background: #f4f4f4;	
 	height: 54px; // стандартная высота
 
-	&__equlizer {
-        height: inherit;
-		display: flex;
-		align-items: center;
-	}
 	z-index: 400;
 	@include lg{
 		z-index: 1000;
@@ -22,6 +17,7 @@
 
 	/* Внутренний контейнер: горизонтальное выравнивание */
 	&__inner {
+		 height: inherit;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

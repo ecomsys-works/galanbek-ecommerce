@@ -870,12 +870,8 @@ Products layout
   /* Локация/доп. элементы */
   /* Бургер-меню (мобильное) */
 }
-.header__equlizer {
-  height: inherit;
-  display: flex;
-  align-items: center;
-}
 .header__inner {
+  height: inherit;
   display: flex;
   align-items: center;
   justify-content: space-between;
