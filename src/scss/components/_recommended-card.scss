@@ -1,0 +1,119 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+КАРТОЧКА ТОВАРА \ RECOMMENDED PRODUCT CARD
+--------------------------------------------------------------------------------------------------------------------------------*/
+.recommended-card {
+	display: flex; // или block
+	flex-direction: column;
+	height: 100%;
+
+	/* ---------------- Image Wrapper ---------------- */
+	&__image-wrapper {
+		position: relative;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-radius: 13px;
+		background: #fff;
+		aspect-ratio: 1 / 1;
+		width: 100%;
+		overflow: hidden;
+		display: block;
+
+		@include md {
+			border-radius: 20px;
+		}
+
+		/* Hover эффект: масштаб изображения */
+		transition: transform 0.4s ease;
+
+		&:hover .product-card__image {
+			transform: scale(1.05);
+		}
+	}
+
+	&__image {
+		block-size: 100%;
+		inline-size: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.4s ease; /* плавный переход для hover */
+	}
+
+	/* ---------------- Content ---------------- */
+	&__content {
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+		flex: 1; /* растягиваем */
+		justify-content: space-between;
+
+		padding-top: 10px;
+		@include sm{
+			padding-top: 15px;
+		}
+		@include lg {
+			padding-top: 25px;
+		}
+	}
+
+	&__group {
+		margin-top: auto; /* прижимает к низу */
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		font-size: 8px;
+		margin-bottom: 10px;
+		@include sm {
+			font-size: 14px;
+		}
+		@include lg {
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+
+		@include xxxl {
+			font-size: 20px;
+		}
+	}
+
+	&__price {
+		font-weight: 500;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: var(--black);
+
+		font-size: 11px;
+		@include sm {
+			font-size: 14px;
+		}
+
+		@include lg {
+			font-size: 20px;
+		}
+
+		@include xxxl {
+			font-size: 24px;
+		}
+	}
+
+	&__button {
+		width: 100%;
+
+		margin-top: 12px;
+		@include lg {
+			margin-top: 20px;
+		}
+		@include xxxl {
+			margin-top: 25px;
+		}
+	}
+}

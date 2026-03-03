@@ -1,6 +1,6 @@
 // hoverParallaxMainFixed.js
 export function hoverParallax(options) {
-  const mainSlider = document.querySelector(options?.el) || document.querySelector('.product-gallery__main');
+  const mainSlider = document.querySelector(options?.selector) || document.querySelector('.product-gallery__main');
   if (!mainSlider) return;
 
   mainSlider.addEventListener('click', () => {

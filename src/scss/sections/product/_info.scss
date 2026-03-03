@@ -1,0 +1,155 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+PRODUCT INFO
+ --------------------------------------------------------------------------------------------------------------------------------*/
+.product-info {
+	background: #fff;
+	border-radius: 20px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	min-height: 100%;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.product-info__label {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+/* PRICE */
+.product-info__price-row {
+	display: flex;
+	align-items: center;
+}
+
+.price-old,
+.price-new {
+	font-size: 45px;
+	font-weight: 600;
+}
+
+.price-new-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: 20px;
+}
+
+.price-new {
+	color: #593c6d;
+}
+
+.price-badge {
+	background: #593c6d;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-radius: 100px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+}
+
+/* COLOR RADIO */
+.color-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 40px);
+	gap: 10px;
+}
+
+.color-option input {
+	display: none;
+}
+
+.color {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	display: block;
+	cursor: pointer;
+}
+
+.color-option input:checked + .color {
+	outline: 3px solid #593c6d;
+}
+
+/* OPTIONS RADIO */
+.option-row {
+	display: flex;
+	gap: 15px;
+}
+
+.option input {
+	display: none;
+}
+
+.option span {
+	padding: 20px 25px;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.option input:checked + span {
+	border-color: #593c6d;
+	background: #f3edf7;
+}
+
+/* CART */
+.product-info__cart-row {
+	display: flex;
+	gap: 10px;
+}
+
+.quantity {
+	min-width: 226px;
+	height: 58px;
+	border: 1px solid #000;
+	border-radius: 20px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.quantity__input {
+	width: 40px;
+	text-align: center;
+	border: none;
+	font-size: 18px;
+}
+
+.quantity__btn {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.btn-primary {
+	flex: 1;
+	height: 58px;
+	border-radius: 20px;
+	background: #593c6d;
+	color: #fff;
+	border: none;
+	font-size: 18px;
+}
+
+.btn-secondary {
+	height: 58px;
+	border-radius: 20px;
+	border: 1px solid rgba(89, 60, 109, 0.3);
+	background: transparent;
+	font-size: 18px;
+	color: #666;
+}

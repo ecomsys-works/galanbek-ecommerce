@@ -1,0 +1,151 @@
+<form class="product-info" id="productForm">
+
+  <!-- PRICE (не часть формы логически, но внутри блока) -->
+  <div class="product-info__price-row">
+    <div class="price-old">110 000 ₽</div>
+
+    <div class="price-new-wrapper">
+      <div class="price-new">93 990 ₽</div>
+      <div class="price-badge">Акция</div>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <fieldset class="product-info__section">
+    <legend class="product-info__label">Цвет</legend>
+
+    <div class="color-grid">
+
+      <label class="color-option">
+        <input type="radio" name="color" value="pink-light" required>
+        <span class="color" style="background:#f8f4f4;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="turquoise">
+        <span class="color" style="background:#40e0d0;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="white">
+        <span class="color" style="background:#ffffff;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="blue-light">
+        <span class="color" style="background:#cfe9ff;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="green-light">
+        <span class="color" style="background:#b5f5a5;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="pink">
+        <span class="color" style="background:#ff8fb1;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="pink-light" required>
+        <span class="color" style="background:#f8f4f4;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="turquoise">
+        <span class="color" style="background:#40e0d0;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="white">
+        <span class="color" style="background:#ffffff;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="blue-light">
+        <span class="color" style="background:#cfe9ff;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="green-light">
+        <span class="color" style="background:#b5f5a5;"></span>
+      </label>
+
+      <label class="color-option">
+        <input type="radio" name="color" value="pink">
+        <span class="color" style="background:#ff8fb1;"></span>
+      </label>
+
+      <!-- ещё 6 по аналогии -->
+
+    </div>
+  </fieldset>
+
+  <!-- MEMORY -->
+  <fieldset class="product-info__section">
+    <legend class="product-info__label">Объём памяти</legend>
+
+    <div class="option-row">
+
+      <label class="option">
+        <input type="radio" name="memory" value="256" required>
+        <span>256 ГБ</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="memory" value="512">
+        <span>512 ГБ</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="memory" value="1024">
+        <span>1024 ГБ</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="memory" value="2048">
+        <span>2048 ГБ</span>
+      </label>
+
+    </div>
+  </fieldset>
+
+  <!-- SIM -->
+  <fieldset class="product-info__section">
+    <legend class="product-info__label">Тип SIM</legend>
+
+    <div class="option-row">
+
+      <label class="option">
+        <input type="radio" name="sim" value="sim" required>
+        <span>SIM</span>
+      </label>
+
+      <label class="option">
+        <input type="radio" name="sim" value="esim">
+        <span>eSIM</span>
+      </label>
+
+    </div>
+  </fieldset>
+
+  <!-- QUANTITY + CART -->
+  <div class="product-info__cart-row">
+
+    <div class="quantity">
+      <button type="button" class="quantity__btn" data-action="minus">−</button>
+      <input type="number" name="quantity" value="1" min="1" class="quantity__input">
+      <button type="button" class="quantity__btn" data-action="plus">+</button>
+    </div>
+
+    <button type="submit" class="btn-primary">
+      <span>В корзину</span>
+    </button>
+
+  </div>
+
+  <button type="button" class="btn-secondary">
+    <span>Запросить наличие товара</span>
+  </button>
+
+</form>

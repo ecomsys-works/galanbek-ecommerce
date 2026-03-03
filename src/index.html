@@ -7,16 +7,19 @@
 		<div class="wrapper">
 			@@include('html/parts/header.html')
 			<main class="main">
-				<div class="product-page container">
-					<!-- LEFT COLUMN (Gallery) -->
-					<div class="product-page__gallery">@@include('html/sections/product/gallery.html')</div>
+				@@include('html/components/breadcrumbs/breadcrumbs-product.html')
+				<div class="product container">
+					<h2 class="product__title">Apple iPhone 17 Pro Max 256 Gb (Cosmic Orange)</h2>
+					<div class="product__layout">
+						<!-- LEFT COLUMN (Gallery) -->
+						<div class="product__layout--gallery">@@include('html/sections/product/gallery.html')</div>
 
-					<!-- RIGHT COLUMN (Product Info) -->
-					<div class="product-page__info">
-						<h1>Название товара</h1>
-						<p class="price">$199</p>
-						<!-- тут дальше чекбоксы, цвета и тд -->
+						<!-- RIGHT COLUMN (Product Info) -->
+						<div class="product__layout--info">@@include('html/sections/product/info.html')</div>
 					</div>
+					@@include('html/sections/product/tabs.html')
+
+					@@include('html/sections/product/recommended.html')
 				</div>
 			</main>
 			@@include('html/parts/footer.html')
