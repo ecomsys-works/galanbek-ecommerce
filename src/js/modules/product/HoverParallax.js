@@ -21,11 +21,11 @@ export function hoverParallax(options) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const maxTranslate = 25; // макс смещение
+    const maxTranslate = 18; // макс смещение
     const offsetX = -((x / rect.width) - 0.5) * 2 * maxTranslate;
     const offsetY = -((y / rect.height) - 0.5) * 2 * maxTranslate;
 
-    img.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.05)`;
+    img.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.1)`;
   });
 
   mainSlider.addEventListener('mouseleave', () => {

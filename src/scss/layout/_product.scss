@@ -16,8 +16,8 @@
   padding: 20px 0;
 }
 
-/* === Desktop layout >= 992px === */
-@media (min-width: 992px) {
+/* === Desktop layout >= 640px === */
+@media (min-width: 640px) {
   .product-page {
     flex-direction: row;
   }

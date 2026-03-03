@@ -940,7 +940,7 @@ HEADER
   padding: 1.25rem 0;
 }
 
-/* === Desktop layout >= 992px === */
+/* === Desktop layout >= 640px === */
 /* ------------------------------------------------------------------------------------------------------------------------------
 CATALOG FILTERS SECTION
 --------------------------------------------------------------------------------------------------------------------------------*/
@@ -2894,6 +2894,17 @@ SIDEBAR FILTER
   }
 }
 
+@media (min-width: 375px){
+  .product-gallery__arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .product-gallery__arrow svg {
+    width: 0.4375rem;
+    height: 0.8125rem;
+  }
+}
+
 @media (min-width: 440px){
   .trust-card__title {
     font-size: 1.875rem;
@@ -3060,6 +3071,49 @@ SIDEBAR FILTER
   }
 }
 
+@media (min-width: 640px){
+  .product-page {
+    flex-direction: row;
+  }
+  .product-page__gallery {
+    width: 50%;
+  }
+  .product-page__info {
+    width: 50%;
+  }
+  .product-gallery__container {
+    flex-direction: row;
+  }
+  .product-gallery__thumbs {
+    order: 1;
+  }
+  .product-gallery__main {
+    order: 2;
+  }
+  .product-gallery__main {
+    border-radius: 0.625rem;
+  }
+  .product-gallery__main {
+    height: 100%;
+    height: 0;
+    width: 84%;
+  }
+  .product-gallery__thumbs {
+    width: 16%;
+  }
+  .product-gallery__thumb {
+    border-radius: 0.3125rem;
+  }
+  .product-gallery__arrow {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+  .product-gallery__arrow svg {
+    width: 0.25rem;
+    height: 0.5rem;
+  }
+}
+
 @media (min-width: 768px){
   .container,
   .container-fluid,
@@ -3151,14 +3205,6 @@ SIDEBAR FILTER
     grid-template-columns: repeat(2, 1fr);
     gap: 0.9375rem;
   }
-  .product-gallery__arrow {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-  .product-gallery__arrow svg {
-    width: 0.4375rem;
-    height: 0.8125rem;
-  }
   .product-gallery__arrow--prev {
     left: 1.25rem;
   }
@@ -3237,15 +3283,6 @@ SIDEBAR FILTER
   .header {
     z-index: 1000;
   }
-  .product-page {
-    flex-direction: row;
-  }
-  .product-page__gallery {
-    width: 50%;
-  }
-  .product-page__info {
-    width: 50%;
-  }
   .catalog {
     background-color: transparent;
   }
@@ -3270,22 +3307,13 @@ SIDEBAR FILTER
   .home-promos__grid {
     height: 37.5rem;
   }
-  .product-gallery__container {
-    flex-direction: row;
+  .product-gallery__arrow {
+    width: 2.75rem;
+    height: 2.75rem;
   }
-  .product-gallery__thumbs {
-    order: 1;
-  }
-  .product-gallery__main {
-    order: 2;
-  }
-  .product-gallery__main {
-    height: 100%;
-    height: 0;
-    width: 84%;
-  }
-  .product-gallery__thumbs {
-    width: 16%;
+  .product-gallery__arrow svg {
+    width: 0.4375rem;
+    height: 0.8125rem;
   }
   .categories-card img {
     inset-block-start: 0%;

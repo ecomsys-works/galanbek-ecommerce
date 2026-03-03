@@ -5,7 +5,7 @@ export function productGallery(options) {
 
     // === Thumbs Swiper ===
     const thumbsSwiper = new Swiper('.product-gallery__thumbs', {
-        direction: window.innerWidth >= 992 ? 'vertical' : 'horizontal',
+        direction: window.innerWidth >= 640 ? 'vertical' : 'horizontal',
         slidesPerView: 5,
         spaceBetween: 15,
         autoHeight: false,
@@ -13,7 +13,7 @@ export function productGallery(options) {
         lazy: true,
         breakpoints: {
             0: { direction: 'horizontal', slidesPerView: 5, spaceBetween: 10 },
-            992: { direction: 'vertical', slidesPerView: 5, spaceBetween: 10 },
+            640: { direction: 'vertical', slidesPerView: 5, spaceBetween: 10 },
             1200: { direction: 'vertical', slidesPerView: 5, spaceBetween: 15 }
         }
     });
@@ -45,7 +45,7 @@ export function productGallery(options) {
     function syncThumbsHeight() {
         if (!main || !thumbs) return;
 
-        if (window.innerWidth >= 992) {
+        if (window.innerWidth >= 640) {
             main.style.height = main.offsetWidth + 'px';
             thumbs.style.height = main.offsetHeight + 'px';
         } else {
