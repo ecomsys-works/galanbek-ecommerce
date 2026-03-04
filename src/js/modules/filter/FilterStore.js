@@ -2,7 +2,7 @@ import { buildCatalogFormDataFromState } from "./CatalogRequestBuilder"   // Ñ„Ð
 
 export class FilterStore {
   constructor(options) {
-    this.storageKey = 'catalogFilters'
+    this.storageKey = 'retailFilters'
 
     this.state = {
       price: {
