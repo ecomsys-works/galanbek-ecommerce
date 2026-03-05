@@ -1,4 +1,4 @@
-export class FilterStore {
+export class FilterCheckboxesStore {
   constructor({ formId }) {
     this.form = document.getElementById(formId)
     if (!this.form) {

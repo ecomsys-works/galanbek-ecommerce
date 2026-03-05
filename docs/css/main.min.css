@@ -2787,16 +2787,16 @@ SIDEBAR FILTER
   letter-spacing: -0.02em;
 }
 
-.filter-s-section.child.active .filter-s-caret {
+.filter-s-section--child.active .filter-s-caret {
   transform: rotate(180deg);
   color: rgb(0, 0, 0);
 }
 
-.filter-s-section.child .filter-s-label {
+.filter-s-section--child .filter-s-label {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.filter-s-section.child.active .filter-s-label {
+.filter-s-section--child.active .filter-s-label {
   color: rgb(0, 0, 0);
 }
 

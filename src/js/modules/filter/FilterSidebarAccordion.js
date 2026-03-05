@@ -3,7 +3,7 @@ export function initFilterSidebarAccordion() {
   if (!sidebar) return;
 
   const parentBtn = sidebar.querySelector('[data-parent-toggle]');
-  const childSections = sidebar.querySelectorAll('.filter-s-section.child');
+  const childSections = sidebar.querySelectorAll('.filter-s-section--child');
 
   // --------------------------
   // Универсальный toggle

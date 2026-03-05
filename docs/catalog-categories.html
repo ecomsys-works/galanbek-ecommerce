@@ -7,25 +7,40 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <script>
-        (function normalizeDPR() {
+        (function normalizeDPRForTV() {
             const meta = document.querySelector('meta[name="viewport"]');
             if (!meta) return;
 
-            const dpr = window.devicePixelRatio || 1;
+            // Минимальные размеры для телевизора, например 1920x1080 и выше
+            const minTVWidth = 1920;
+            const minTVHeight = 1080;
 
-            // вычисляем scale и округляем до 2 знаков для красоты
-            const scale = +(1 / dpr).toFixed(2);
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
 
-            meta.setAttribute("content", `width=device-width, initial-scale=${scale}, maximum-scale=1, user-scalable=yes`);
+            // Применяем только если экран большой — телевизор
+            if (screenWidth >= minTVWidth && screenHeight >= minTVHeight) {
+                const dpr = window.devicePixelRatio || 1;
 
-            // Для отладки: покажет, какой scale выставился
-            console.log("normalizeDPR applied:", {
-                dpr,
-                scale
-            });
+                // вычисляем scale и округляем до 2 знаков
+                const scale = +(1 / dpr).toFixed(2);
+
+                meta.setAttribute("content", `width=device-width, initial-scale=${scale}, maximum-scale=1, user-scalable=yes`);
+
+                console.log("normalizeDPR applied (TV):", {
+                    screenWidth,
+                    screenHeight,
+                    dpr,
+                    scale
+                });
+            } else {
+                console.log("normalizeDPR skipped (not TV):", {
+                    screenWidth,
+                    screenHeight
+                });
+            }
         })();
     </script>
-
     <title>Катaлог: категории</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">

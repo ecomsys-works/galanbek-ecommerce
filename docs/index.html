@@ -7,25 +7,40 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <script>
-        (function normalizeDPR() {
+        (function normalizeDPRForTV() {
             const meta = document.querySelector('meta[name="viewport"]');
             if (!meta) return;
 
-            const dpr = window.devicePixelRatio || 1;
+            // Минимальные размеры для телевизора, например 1920x1080 и выше
+            const minTVWidth = 1920;
+            const minTVHeight = 1080;
 
-            // вычисляем scale и округляем до 2 знаков для красоты
-            const scale = +(1 / dpr).toFixed(2);
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
 
-            meta.setAttribute("content", `width=device-width, initial-scale=${scale}, maximum-scale=1, user-scalable=yes`);
+            // Применяем только если экран большой — телевизор
+            if (screenWidth >= minTVWidth && screenHeight >= minTVHeight) {
+                const dpr = window.devicePixelRatio || 1;
 
-            // Для отладки: покажет, какой scale выставился
-            console.log("normalizeDPR applied:", {
-                dpr,
-                scale
-            });
+                // вычисляем scale и округляем до 2 знаков
+                const scale = +(1 / dpr).toFixed(2);
+
+                meta.setAttribute("content", `width=device-width, initial-scale=${scale}, maximum-scale=1, user-scalable=yes`);
+
+                console.log("normalizeDPR applied (TV):", {
+                    screenWidth,
+                    screenHeight,
+                    dpr,
+                    scale
+                });
+            } else {
+                console.log("normalizeDPR skipped (not TV):", {
+                    screenWidth,
+                    screenHeight
+                });
+            }
         })();
     </script>
-
     <title>Катaлог: товары</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -296,7 +311,7 @@
                                 <!-- Place for inject -->
                             </div>
 
-                            <div class="filter-c-wrap--child">
+                            <div class="filter-c-children filter-c-wrap--child">
                                 <!-- Child Цена -->
                                 <div class="filter-c-section filter-c-section--child">
                                     <button class="filter-c-header" data-toggle>
@@ -321,49 +336,17 @@
                                     </div>
                                 </div>
 
-                                <!-- Child Память -->
-                                <div class="filter-c-section filter-c-section--child">
-                                    <button class="filter-c-header" data-toggle>
-                                        <span class="filter-c-label">Память</span>
-                                        <span class="filter-c-caret">▼</span>
-                                    </button>
-                                    <div class="filter-c-content">
-                                        <div class="filter-c-inner" data-filter-ui="memory"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Child section "Модель" -->
-                                <div class="filter-c-section filter-c-section--child">
-                                    <button class="filter-c-header" data-toggle>
-                                        <span class="filter-c-label">Модель</span>
-                                        <span class="filter-c-caret">▼</span>
-                                    </button>
-                                    <div class="filter-c-content">
-                                        <div class="filter-c-inner" data-filter-ui="model"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Child section "Цвет" -->
-                                <div class="filter-c-section filter-c-section--child">
-                                    <button class="filter-c-header" data-toggle>
-                                        <span class="filter-c-label">Цвет</span>
-                                        <span class="filter-c-caret">▼</span>
-                                    </button>
-                                    <div class="filter-c-content">
-                                        <div class="filter-c-inner" data-filter-ui="color"></div>
-                                    </div>
-                                </div>
-
+                                <!-- Образец что вставит скрипт -->
                                 <!-- Child section "СИМ" -->
-                                <div class="filter-c-section filter-c-section--child">
-                                    <button class="filter-c-header" data-toggle>
-                                        <span class="filter-c-label">Sim</span>
-                                        <span class="filter-c-caret">▼</span>
-                                    </button>
-                                    <div class="filter-c-content">
-                                        <div class="filter-c-inner" data-filter-ui="sim"></div>
-                                    </div>
-                                </div>
+                                <!-- <div class="filter-c-section filter-c-section--child">
+				<button class="filter-c-header" data-toggle>
+					<span class="filter-c-label">Sim</span>
+					<span class="filter-c-caret">▼</span>
+				</button>
+				<div class="filter-c-content">
+					<div class="filter-c-inner" data-filter-ui="sim"></div>
+				</div>
+			</div> -->
                             </div>
                         </div>
                         <!-- Footer -->
@@ -423,50 +406,17 @@
                                             </div>
 
                                             <!-- Чекбоксы -->
-
-                                            <!-- Child section "Память" -->
-                                            <div class="filter-s-section child">
-                                                <button class="filter-s-header" data-toggle>
-                                                    <span class="filter-s-label">Память</span>
-                                                    <span class="filter-s-caret">▼</span>
-                                                </button>
-                                                <div class="filter-s-content">
-                                                    <div class="filter-s-inner" data-filter-ui="memory"></div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Child section "Модель" -->
-                                            <div class="filter-s-section child">
-                                                <button class="filter-s-header" data-toggle>
-                                                    <span class="filter-s-label">Модель</span>
-                                                    <span class="filter-s-caret">▼</span>
-                                                </button>
-                                                <div class="filter-s-content">
-                                                    <div class="filter-s-inner" data-filter-ui="model"></div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Child section "Цвет" -->
-                                            <div class="filter-s-section child">
-                                                <button class="filter-s-header" data-toggle>
-                                                    <span class="filter-s-label">Цвет</span>
-                                                    <span class="filter-s-caret">▼</span>
-                                                </button>
-                                                <div class="filter-s-content">
-                                                    <div class="filter-s-inner" data-filter-ui="color"></div>
-                                                </div>
-                                            </div>
-
+                                            <!-- Образец что вставит скрипт -->
                                             <!-- Child section "СИМ" -->
-                                            <div class="filter-s-section child">
-                                                <button class="filter-s-header" data-toggle>
-                                                    <span class="filter-s-label">Sim</span>
-                                                    <span class="filter-s-caret">▼</span>
-                                                </button>
-                                                <div class="filter-s-content">
-                                                    <div class="filter-s-inner" data-filter-ui="sim"></div>
-                                                </div>
-                                            </div>
+                                            <!-- <div class="filter-s-section filter-s-section--child">
+				<button class="filter-s-header" data-toggle>
+					<span class="filter-s-label">Sim</span>
+					<span class="filter-s-caret">▼</span>
+				</button>
+				<div class="filter-s-content">
+					<div class="filter-s-inner" data-filter-ui="sim"></div>
+				</div>
+			</div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -500,24 +450,26 @@
                                 <input type="hidden" name="price_min" value="68390" data-price-min>
                                 <input type="hidden" name="price_max" value="140990" data-price-max>
 
+
+                                <!-- Для чекбоксов указываем группы категории data-group -->
                                 <!-- MEMORY -->
-                                <input type="checkbox" name="memory[]" value="256" hidden>
-                                <input type="checkbox" name="memory[]" value="512" hidden>
+                                <input type="checkbox" name="memory[]" value="256" hidden data-group="Память">
+                                <input type="checkbox" name="memory[]" value="512" hidden data-group="Память">
 
                                 <!-- Model -->
-                                <input type="checkbox" name="model[]" value="iPhone 14" hidden>
-                                <input type="checkbox" name="model[]" value="iPhone 13" hidden>
-                                <input type="checkbox" name="model[]" value="iPhone 12" hidden>
+                                <input type="checkbox" name="model[]" value="iPhone 14" hidden data-group="Модель">
+                                <input type="checkbox" name="model[]" value="iPhone 13" hidden data-group="Модель">
+                                <input type="checkbox" name="model[]" value="iPhone 12" hidden data-group="Модель">
 
                                 <!-- COLOR -->
-                                <input type="checkbox" name="color[]" value="black" hidden>
-                                <input type="checkbox" name="color[]" value="white" hidden>
-                                <input type="checkbox" name="color[]" value="gold" hidden>
+                                <input type="checkbox" name="color[]" value="black" hidden data-group="Цвет">
+                                <input type="checkbox" name="color[]" value="white" hidden data-group="Цвет">
+                                <input type="checkbox" name="color[]" value="gold" hidden data-group="Цвет">
 
                                 <!-- SIM -->
-                                <input type="checkbox" name="sim[]" value="single" hidden>
-                                <input type="checkbox" name="sim[]" value="dual" hidden>
-                                <input type="checkbox" name="sim[]" value="esim" hidden>
+                                <input type="checkbox" name="sim[]" value="single" hidden data-group="SIM">
+                                <input type="checkbox" name="sim[]" value="dual" hidden data-group="SIM">
+                                <input type="checkbox" name="sim[]" value="esim" hidden data-group="SIM">
                             </form>
                             <!-- ФОРМА СО СКРЫТЫМИ ПОЛЯМИ (ИСТОЧНИК ИСТИНЫ - ОТВЕТ СЕРВЕРА КОНЕЦ) -->
 

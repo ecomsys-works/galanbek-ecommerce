@@ -39,24 +39,26 @@
 					<input type="hidden" name="price_min" value="68390" data-price-min />
 					<input type="hidden" name="price_max" value="140990" data-price-max />
 
+
+					<!-- Для чекбоксов указываем группы категории data-group -->
 					<!-- MEMORY -->
-					<input type="checkbox" name="memory[]" value="256" hidden />
-					<input type="checkbox" name="memory[]" value="512" hidden />
+					<input type="checkbox" name="memory[]" value="256" hidden data-group="Память"/>
+					<input type="checkbox" name="memory[]" value="512" hidden data-group="Память"/>
 
 					<!-- Model -->
-					<input type="checkbox" name="model[]" value="iPhone 14" hidden />
-					<input type="checkbox" name="model[]" value="iPhone 13" hidden />
-					<input type="checkbox" name="model[]" value="iPhone 12" hidden />
+					<input type="checkbox" name="model[]" value="iPhone 14" hidden data-group="Модель"/>
+					<input type="checkbox" name="model[]" value="iPhone 13" hidden data-group="Модель"/>
+					<input type="checkbox" name="model[]" value="iPhone 12" hidden data-group="Модель"/>
 
 					<!-- COLOR -->
-					<input type="checkbox" name="color[]" value="black" hidden />
-					<input type="checkbox" name="color[]" value="white" hidden />
-					<input type="checkbox" name="color[]" value="gold" hidden />
+					<input type="checkbox" name="color[]" value="black" hidden data-group="Цвет"/>
+					<input type="checkbox" name="color[]" value="white" hidden data-group="Цвет"/>
+					<input type="checkbox" name="color[]" value="gold" hidden data-group="Цвет"/>
 
 					<!-- SIM -->
-					<input type="checkbox" name="sim[]" value="single" hidden />
-					<input type="checkbox" name="sim[]" value="dual" hidden />
-					<input type="checkbox" name="sim[]" value="esim" hidden />
+					<input type="checkbox" name="sim[]" value="single" hidden data-group="SIM"/>
+					<input type="checkbox" name="sim[]" value="dual" hidden data-group="SIM"/>
+					<input type="checkbox" name="sim[]" value="esim" hidden data-group="SIM"/>
 				</form>
 				<!-- ФОРМА СО СКРЫТЫМИ ПОЛЯМИ (ИСТОЧНИК ИСТИНЫ - ОТВЕТ СЕРВЕРА КОНЕЦ) -->
 
