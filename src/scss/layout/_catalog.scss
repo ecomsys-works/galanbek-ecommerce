@@ -1,46 +1,42 @@
 /* ------------------------------------------------------------------------------------------------------------------------------
 Catalog products layout
  --------------------------------------------------------------------------------------------------------------------------------*/
-/* ------------------------------------------------------------------------------------------------------------------------------
-Catalog products layout
---------------------------------------------------------------------------------------------------------------------------------*/
-
 .catalog__layout {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
 .catalog__content {
-  width: 100%;
+	width: 100%;
 }
 
 /* Sidebar — ТОЛЬКО desktop */
 .catalog__sidebar {
-  display: none; // mobile скрыт
+	display: none; // mobile скрыт
 
-  @media (min-width: 992px) {
-    display: block;
-    position: static;
-    width: 293px;
-    height: auto;
+	@media (min-width: 992px) {
+		display: block;
+		position: static;
+		width: 293px;
+		height: auto;
 
-    @include xxxl {
-      width: 340px;
-    }
-  }
+		@include xxxl {
+			width: 340px;
+		}
+	}
 }
 
 @media (min-width: 992px) {
-  .catalog__layout {
-    flex-direction: row;
-    gap: 20px;
-  }
+	.catalog__layout {
+		flex-direction: row;
+		gap: 20px;
+	}
 
-  .catalog__content {
-    flex: 1;
-  }
+	.catalog__content {
+		flex: 1;
+	}
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------------
@@ -49,8 +45,19 @@ Products layout
 /* Мобильная версия — 2 колонки */
 .products__grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 25px 20px;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 20px;
+}
+
+@media (min-width: 440px) {
+	.products__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 640px) {
+	.products__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 /* Планшет — 3 колонки */
@@ -69,8 +76,7 @@ Products layout
 
 @include xxl {
 	.products__grid {
+		gap: 25px 20px;
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
-
-

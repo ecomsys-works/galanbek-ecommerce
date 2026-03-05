@@ -23,9 +23,10 @@ CATALOG PRODUCTS SECTION
 
 		font-weight: 500;
 		font-size: 28px;
-		margin-bottom: 25px;
+		margin-bottom: 5px;
 
 		@include sm {
+			margin-bottom: 25px;
 			display: none;
 		}
 
@@ -38,13 +39,16 @@ CATALOG PRODUCTS SECTION
 
 	// Группа слектов сортировки
 	&__sorts-group {
-		position: relative;		
+		position: relative;
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: 15px;
 		z-index: 10;
+		margin-bottom: 5px;
+		@include sm {
+			margin-bottom: 15px;
+		}
 
 		@include lg {
 			justify-content: start;
@@ -53,7 +57,7 @@ CATALOG PRODUCTS SECTION
 			padding: 20px 0;
 			z-index: 500;
 		}
-		
+
 		@include xxxl {
 			padding: 23px 0;
 		}

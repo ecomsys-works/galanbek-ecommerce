@@ -7,8 +7,11 @@
 	color: #fff;
 
 	// Общие паддинги
-	padding-top: 15px;
+	padding-top: 25px;
 	padding-bottom: 70px;
+
+	@include sm {
+	}
 
 	@include md {
 		padding-top: 45px;
@@ -58,7 +61,11 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 60px;
+		gap: 65px;
+
+		@include sm {
+			gap: 60px;
+		}
 
 		@include lg {
 			flex-direction: row;
@@ -71,7 +78,7 @@
 	// Левая колонка
 	&__left {
 		display: flex;
-		flex-direction: column;
+		flex-direction: column;		
 		gap: 80px;
 		width: 100%;
 		height: inherit;
@@ -79,14 +86,17 @@
 		@include lg {
 			width: 30%;
 		}
-		@include xxl {
+
+		@include lg{
+			justify-content: space-between;
+		}
+		@include xxl {			
 			width: 50%;
 		}
 
 		&-group {
 			display: flex;
 			flex-direction: column;
-			gap: 24px;
 		}
 	}
 
@@ -94,6 +104,7 @@
 	&__logo {
 		width: 231px;
 		height: 96px;
+		margin-bottom: 46px;
 
 		img {
 			transition: var(--transition);
@@ -108,7 +119,17 @@
 		@include xxl {
 			width: 359px;
 			height: 150px;
-			margin-bottom: 10px;
+			margin-bottom: 35px;
+		}
+	}
+	&__basetitle {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-bottom: 28px;
+
+		@include xxl {
+			gap: 30px;
 		}
 	}
 
@@ -118,13 +139,12 @@
 		font-size: 30px;
 		line-height: 100%;
 		letter-spacing: -0.02em;
-		margin-bottom: 55px;
 
 		@include sm {
 			margin-bottom: 0;
 		}
 		@include xxl {
-			font-size: 55px;
+			font-size: 50px;
 		}
 	}
 
@@ -135,7 +155,6 @@
 		line-height: 100%;
 		letter-spacing: -0.02em;
 		font-size: 18px;
-		display: none;
 		max-width: 300px;
 
 		@include sm {
@@ -174,7 +193,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 100px;
+		gap: 110px;
 		width: 50%;
 
 		@include md {
@@ -209,6 +228,11 @@
 				opacity: 0.7;
 			}
 		}
+		.title-lg-hidden{
+			@include xxl{
+				display: none;
+			}
+		}
 	}
 
 	&__menu-title {
@@ -227,7 +251,7 @@
 	&__requisites-mobile {
 		display: flex;
 		flex-direction: column;
-		gap: 15px;
+		gap: 30px;
 		@include lg {
 			display: none;
 		}
@@ -236,6 +260,7 @@
 		display: none;
 		@include lg {
 			display: block;
+			padding-bottom: 20px;
 		}
 	}
 
@@ -244,19 +269,16 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
-		line-height: 100%;
+		line-height: 65%;
 		letter-spacing: -0.01em;
 		color: rgba(255, 255, 255, 0.5);
 		font-weight: 500;
 
-		@media (max-width: 440px) {
-			font-size: 8px;
-		}
-		@media (min-width: 441px) {
-			font-size: 10px;
-		}
+		font-size: 10px;
+
 		@include xxl {
-			font-size: 12px;
+			color: rgb(255,255, 255, 0.5);
+			font-size: 9px;
 		}
 	}
 
@@ -268,22 +290,25 @@
 		letter-spacing: -0.02em;
 		color: rgba(255, 255, 255, 0.6);
 		display: none;
+		font-size: 10px;
 
 		&--visible {
 			display: block !important;
 		}
 
-		@media (max-width: 440px) {
-			font-size: 8px;
-		}
 		@media (min-width: 441px) {
 			font-size: 10px;
 		}
 		@include lg {
 			display: block;
+			padding-bottom: 35px;
 		}
 		@include xxl {
-			font-size: 12px;
+			padding-bottom: 60px;
+			font-size: 10px;
+		}
+		@include xxxl{
+			padding-bottom: 50px;
 		}
 	}
 
@@ -294,10 +319,8 @@
 		letter-spacing: -0.02em;
 		color: rgba(255, 255, 255, 0.6);
 		max-width: 240px;
+		font-size: 10px;
 
-		@media (max-width: 440px) {
-			font-size: 8px;
-		}
 		@media (min-width: 441px) {
 			font-size: 10px;
 		}

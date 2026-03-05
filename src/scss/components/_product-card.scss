@@ -47,18 +47,7 @@
 		justify-content: space-between;
 
 		padding-top: 10px;
-		@include sm{
-			padding-top: 15px;
-		}
-		@include lg {
-			padding-top: 25px;
-		}
 	}
-
-	&__group {
-		margin-top: auto; /* прижимает к низу */
-	}
-
 	&__title {
 		font-size: 20px;
 		font-weight: 400;
@@ -72,19 +61,9 @@
 
 		font-size: 8px;
 		margin-bottom: 10px;
-		@include sm {
-			font-size: 14px;
-		}
-		@include lg {
-			font-size: 16px;
-			margin-bottom: 15px;
-		}
-
-		@include xxxl {
-			font-size: 20px;
-		}
+		max-width: 85%;
+		margin-inline: auto;
 	}
-
 	&__price {
 		font-weight: 500;
 		line-height: 100%;
@@ -92,28 +71,136 @@
 		color: var(--black);
 
 		font-size: 11px;
-		@include sm {
-			font-size: 14px;
-		}
+	}
 
-		@include lg {
-			font-size: 20px;
-		}
-
-		@include xxxl {
-			font-size: 24px;
-		}
+	&__group {
+		margin-top: auto; /* прижимает к низу */
 	}
 
 	&__button {
 		width: 100%;
 
 		margin-top: 12px;
-		@include lg {
-			margin-top: 20px;
+	}
+}
+
+// для секции новые тоовары
+.new-products {
+	.product-card {
+		&__title {
+			font-size: 8px;
+			margin-bottom: 12px;
+			@include sm {
+				font-size: 8px;
+			}
+			@include md {
+				font-size: 16px;
+				margin-bottom: 15px;
+			}
+
+			@include xxxl {
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
 		}
-		@include xxxl {
-			margin-top: 25px;
+
+		&__price {
+			font-size: 11px;
+			@include sm {
+				font-size: 11px;
+			}
+
+			@include md {
+				font-size: 20px;
+			}
+
+			@include xxxl {
+				font-size: 24px;
+			}
+		}
+
+
+		&__content {
+			padding-top: 15px;
+
+			@media (min-width: 440px) {
+				padding-top: 10px;
+			}
+
+			@include md{
+				padding-top: 20px;
+			}
+			@include xxxl {
+				padding-top: 25px;
+			}
+		}
+
+		&__button {
+			margin-top: 15px;
+			@media (min-width: 440px) {
+				margin-top: 15px;
+			}
+			@include md{
+				margin-top: 24px;
+			}
+			@include xxxl {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+// для товаров в категории на странице товаров
+.catalog {
+	.product-card {
+		&__title {
+			font-size: 15px;
+			margin-bottom: 20px;
+
+			@media (min-width: 440px) {
+				font-size: 12px;
+				margin-bottom: 16px;
+			}
+			@include xxl {
+				margin-bottom: 16px;
+				font-size: 14px;
+			}
+		}
+
+		&__price {
+			font-size: 19px;
+			@media (min-width: 440px) {
+				font-size: 14px;
+			}
+
+			@include xxl {
+				font-size: 16px;
+			}
+
+			@include xxxl {
+				font-size: 18px;
+			}
+		}
+
+		&__content {
+			padding-top: 15px;
+
+			@media (min-width: 440px) {
+				padding-top: 10px;
+			}
+			@include xxl {
+				padding-top: 15px;
+			}
+		}
+
+		&__button {
+			margin-top: 20px;
+			@media (min-width: 440px) {
+				margin-top: 15px;
+			}
+			@include xxl {
+				margin-top: 20px;
+			}
 		}
 	}
 }
