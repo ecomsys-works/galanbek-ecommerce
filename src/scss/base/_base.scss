@@ -26,9 +26,8 @@ html {
 
 html,
 body {
-	inline-size: 100%;
-	block-size: 100%;
-	background: #f6f6f6;
+	margin: 0;
+	background: #f6f6f6;	
 	// overflow-x: hidden;
 }
 
@@ -76,12 +75,17 @@ svg.icon {
 
 .wrapper {
 	display: flex;
-	min-block-size: 100%;
+	flex-direction: column;	
 
+	min-height: 100vh;
+	min-height: 100dvh;
+
+	padding-top: 55px; // стандартная высота
+	@include xxl {
+		padding-top: 104px; // высота на больших экранах
+	}
 	/** Поменять на clip - если используется в проекте position: sticky */
-	position: relative;
 	overflow: clip;
-	flex-direction: column;
 }
 
 .main {

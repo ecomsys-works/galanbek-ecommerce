@@ -500,8 +500,7 @@ html.lock .wrapper {
 
 html,
 body {
-  inline-size: 100%;
-  block-size: 100%;
+  margin: 0;
   background: #f6f6f6;
 }
 
@@ -553,11 +552,12 @@ svg.icon {
 
 .wrapper {
   display: flex;
-  min-block-size: 100%;
-  /** Поменять на clip - если используется в проекте position: sticky */
-  position: relative;
-  overflow: clip;
   flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 3.4375rem;
+  /** Поменять на clip - если используется в проекте position: sticky */
+  overflow: clip;
 }
 
 .main {
@@ -958,8 +958,10 @@ Products layout
 HEADER
 --------------------------------------------------------------------------------------------------------------------------------*/
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   background: #f6f6f6;
   height: 3.375rem;
   z-index: 400;
@@ -5213,6 +5215,9 @@ SIDEBAR FILTER
 }
 
 @media (min-width: 1400px){
+  .wrapper {
+    padding-top: 6.5rem;
+  }
   .typography h5 {
     font-size: 2rem;
   }
