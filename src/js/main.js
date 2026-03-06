@@ -6,6 +6,10 @@ BaseHelpers.addLoadedClass();
 BaseHelpers.calcScrollbarWidth();
 BaseHelpers.addTouchClass();
 
+
+import autoREM from './helpers/auto-rem';
+autoREM(1440, 16);
+
 /* ------------------------------------------------------------------------------------------------------------------------------
 Modules import
 --------------------------------------------------------------------------------------------------------------------------------*/
@@ -98,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneInput1 = document.getElementById('phone-mask-1');
     const im1 = new Inputmask("+7 (999) 999-99-99");
     im1.mask(phoneInput1);
-
 
 
 

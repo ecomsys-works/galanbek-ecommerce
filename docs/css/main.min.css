@@ -24,7 +24,7 @@
 ROOT
 --------------------------------------------------------------------------------------------------------------------------------*/
 :root {
-  --site-max-width: 90rem;
+  --site-max-width: 120rem;
   --font-title: "Inter", sans-serif;
   --font-main: "Inter", sans-serif;
   --white: white;
@@ -556,6 +556,7 @@ html.lock .wrapper {
 
 html,
 body {
+  font-size: 1rem;
   margin: 0;
   background: #f6f6f6;
 }
