@@ -54,6 +54,10 @@
 <body id="catalog-page">
     <div class="overlay" data-overlay></div>
     <div class="wrapper">
+        <div id="splash-screen">
+            <div class="splash-logo"></div>
+        </div>
+
         <header class="header">
             <div class="container header__inner">
                 <!-- ================= LEFT BLOCK ================= -->
@@ -546,7 +550,7 @@
             <section class="highlights">
                 <div class="container">
                     <div class="highlights__grid">
-                        <div class="highlights__gridgroup">
+                        <div class="highlights__gridgroup gsap-left">
                             <a href="#" class="ibg highlights-card">
                                 <img src="./images/webp/categories-highlights/popular.webp" alt="">
                                 <h3 class="highlights-card__title">
@@ -572,7 +576,7 @@
                             </a>
                         </div>
 
-                        <div class="highlights__gridgroup">
+                        <div class="highlights__gridgroup gsap-right">
                             <a href="#" class="highlights-card ibg-noblock">
                                 <img class="highlights-img--desktop" src="./images/webp/categories-highlights/akcii-desktop.webp" alt="">
                                 <img class="highlights-img--mobile" src="./images/webp/categories-highlights/akcii-390.webp" alt="">
@@ -595,7 +599,7 @@
                 <div class="container">
                     <div class="categories__grid">
                         <!-- 1 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/ApplePhone.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Apple iPhone</span>
@@ -607,7 +611,7 @@
                             </h3>
                         </a>
                         <!-- 2 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/AppleMacBook.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Apple MacBook</span>
@@ -619,7 +623,7 @@
                             </h3>
                         </a>
                         <!-- 3 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/AppleIpad.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Apple iPad</span>
@@ -631,7 +635,7 @@
                             </h3>
                         </a>
                         <!-- 4 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/AppleWatch.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Apple Watch</span>
@@ -643,7 +647,7 @@
                             </h3>
                         </a>
                         <!-- 5 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/AppleAirPods.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Apple AirPods</span>
@@ -655,7 +659,7 @@
                             </h3>
                         </a>
                         <!-- 6 -->
-                        <a href="catalog-categories.html" class="ibg categories-card">
+                        <a href="catalog-categories.html" class="ibg categories-card gsap-rise">
                             <img src="./images/webp/categories/acessories.webp" alt="">
                             <h3 class="categories-card__title">
                                 <span>Aксессуары</span>
@@ -794,6 +798,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <script src="./js/main.min.js"></script>
 

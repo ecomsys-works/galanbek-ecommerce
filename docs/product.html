@@ -54,6 +54,10 @@
 <body id="product-page">
     <div class="overlay" data-overlay></div>
     <div class="wrapper">
+        <div id="splash-screen">
+            <div class="splash-logo"></div>
+        </div>
+
         <header class="header">
             <div class="container header__inner">
                 <!-- ================= LEFT BLOCK ================= -->
@@ -560,7 +564,7 @@
                 <div class="product__layout">
                     <!-- LEFT COLUMN (Gallery) -->
                     <div class="product__layout--gallery">
-                        <div class="product-gallery">
+                        <div class="gsap-left product-gallery">
                             <div class="product-gallery__container">
 
                                 <!-- Thumbnails -->
@@ -650,7 +654,7 @@
 
                     <!-- RIGHT COLUMN (Product Info) -->
                     <div class="product__layout--info">
-                        <form class="product-info" id="productForm" data-product-id="123" data-product-title="Apple iPhone 17 Pro Max 256 Gb (Cosmic Orange)">
+                        <form class="gsap-right product-info" id="productForm" data-product-id="123" data-product-title="Apple iPhone 17 Pro Max 256 Gb (Cosmic Orange)">
                             <!-- PRICE -->
                             <div class="product-info__price">
                                 <div class="product-info__price-old">110 000 ₽</div>
@@ -777,7 +781,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="product-tabs" data-tabs>
+                <div class="gsap-rise product-tabs" data-tabs>
                     <div class="product-tabs__nav">
                         <button class="product-tabs__btn is-active" data-tab="specs">Характеристики</button>
 
@@ -883,7 +887,7 @@
                 </div>
 
 
-                <section class="recommended">
+                <section class="gsap-rise recommended">
                     <h2 class="recommended__title">С этим товаром покупают</h2>
 
                     <div class="swiper recommended__slider">
@@ -1186,6 +1190,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <script src="./js/main.min.js"></script>
 

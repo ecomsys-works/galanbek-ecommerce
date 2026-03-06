@@ -54,6 +54,10 @@
 <body id="catalog-products-page">
     <div class="overlay" data-overlay></div>
     <div class="wrapper">
+        <div id="splash-screen">
+            <div class="splash-logo"></div>
+        </div>
+
         <header class="header">
             <div class="container header__inner">
                 <!-- ================= LEFT BLOCK ================= -->
@@ -634,7 +638,7 @@
                     <!-- catalog layout -->
                     <div class="catalog__layout">
                         <!-- sidebar -->
-                        <aside class="catalog__sidebar">
+                        <aside class="catalog__sidebar gsap-left">
                             <div class="scrollbar-none sidebar">
                                 <div class="filter-s">
                                     <div class="filter-s-section parent">
@@ -750,7 +754,7 @@
 
 
                             <!-- UI ИНТЕРФЕЙСЫ ДЛЯ МОБИЛЬНОЙ И ДЕСКТОПНГОЙ ВЕРСИЙ ! -->
-                            <div class="catalog__sorts-group">
+                            <div class="catalog__sorts-group gsap-right">
                                 <!-- Контейнер для кастомного десктопного UI -->
                                 <div class="sort-desktop sort-desktop--catalog" data-sort-desktop data-sort-id="sortCatalog">
                                     <!-- Core вставит сюда <div class="sort-desktop__current"> и <ul> с пунктами -->
@@ -772,7 +776,7 @@
                             <!-- Сетка с товарами -->
                             <div class="products__grid">
                                 <!-- 1 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="#" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Orange.webp" alt="" class="product-card__image">
                                     </a>
@@ -793,7 +797,7 @@
                                 </article>
 
                                 <!-- 2 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Orange.webp" alt="" class="product-card__image">
                                     </a>
@@ -814,7 +818,7 @@
                                 </article>
 
                                 <!-- 3 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13White.webp" alt="" class="product-card__image">
                                     </a>
@@ -835,7 +839,7 @@
                                 </article>
 
                                 <!-- 4 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13White.webp" alt="" class="product-card__image">
                                     </a>
@@ -856,7 +860,7 @@
                                 </article>
 
                                 <!-- 5 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Black.webp" alt="" class="product-card__image">
                                     </a>
@@ -877,7 +881,7 @@
                                 </article>
 
                                 <!-- 6 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Black.webp" alt="" class="product-card__image">
                                     </a>
@@ -898,7 +902,7 @@
                                 </article>
 
                                 <!-- 7 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Orange.webp" alt="" class="product-card__image">
                                     </a>
@@ -919,7 +923,7 @@
                                 </article>
 
                                 <!-- 8 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Orange.webp" alt="" class="product-card__image">
                                     </a>
@@ -940,7 +944,7 @@
                                 </article>
 
                                 <!-- 9 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13White.webp" alt="" class="product-card__image">
                                     </a>
@@ -961,7 +965,7 @@
                                 </article>
 
                                 <!-- 10 -->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13White.webp" alt="" class="product-card__image">
                                     </a>
@@ -982,7 +986,7 @@
                                 </article>
 
                                 <!-- 11-->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Black.webp" alt="" class="product-card__image">
                                     </a>
@@ -1003,7 +1007,7 @@
                                 </article>
 
                                 <!-- 12-->
-                                <article class="product-card">
+                                <article class="gsap-rise product-card">
                                     <a href="product.html" class="product-card__image-wrapper">
                                         <img src="./images/webp/catalog-products/AppleMacBookAir13Black.webp" alt="" class="product-card__image">
                                     </a>
@@ -1153,6 +1157,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <script src="./js/main.min.js"></script>
 

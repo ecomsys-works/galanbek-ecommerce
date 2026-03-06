@@ -3,10 +3,9 @@ Base
 --------------------------------------------------------------------------------------------------------------------------------*/
 
 html {
-	opacity: 0.5;
+	opacity: 0.1;
 	scroll-behavior: smooth;
 	transition: var(--transition);
-	scrollbar-gutter: stable;
 
 	&.loaded {
 		opacity: 1;

@@ -35,225 +35,6 @@ ROOT
   --transition: all 0.3s ease-in-out;
 }
 
-/* =================================================================================================================================
-   MODERN COMBINED RESET
-   - based on modern-normalize + custom tweaks
-   - fully compatible with Safari, Chrome, Firefox
-=================================================================================================================================== */
-/* ---------------------------------------------------------
-   UNIVERSAL
---------------------------------------------------------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-*:focus, *:active,
-*::before:focus,
-*::before:active,
-*::after:focus,
-*::after:active {
-  outline: none;
-}
-
-/* ---------------------------------------------------------
-   HTML
---------------------------------------------------------- */
-html {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
-}
-
-/* ---------------------------------------------------------
-   BODY
---------------------------------------------------------- */
-body {
-  overscroll-behavior: none;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
-  text-wrap: balance;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-main, system-ui, sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-/* ---------------------------------------------------------
-   TEXT ELEMENTS
---------------------------------------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: 400;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-small {
-  font-size: 80%;
-}
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 1em;
-}
-
-/* ---------------------------------------------------------
-   LINKS
---------------------------------------------------------- */
-a {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-}
-a:focus, a:active {
-  outline: none;
-}
-a:visited {
-  text-decoration: none;
-}
-
-/* ---------------------------------------------------------
-   LISTS
---------------------------------------------------------- */
-ul,
-li {
-  list-style: none;
-}
-
-/* ---------------------------------------------------------
-   IMAGES
---------------------------------------------------------- */
-img {
-  vertical-align: top;
-}
-
-/* ---------------------------------------------------------
-   TABLES
---------------------------------------------------------- */
-table {
-  border-color: currentcolor;
-}
-
-/* ---------------------------------------------------------
-   FORMS / BUTTONS / INPUTS
---------------------------------------------------------- */
-input,
-button,
-textarea,
-select,
-optgroup {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button; /* iOS / Safari fix */
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  background-color: transparent;
-}
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-input[type=number] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
-}
-input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-/* ---------------------------------------------------------
-   OTHER INTERACTIVE ELEMENTS
---------------------------------------------------------- */
-summary {
-  display: list-item;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -0.125rem;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-/* ---------------------------------------------------------
-   NAV / HEADER / FOOTER / ASIDE
---------------------------------------------------------- */
-nav,
-header,
-footer,
-aside {
-  display: block;
-}
-
 /* ==========================================================================================================================
    BASIC ENTRANCE ANIMATIONS
 ============================================================================================================================ */
@@ -475,14 +256,289 @@ html.overlay-open {
   pointer-events: auto;
 }
 
+/* =========================================================
+   gasp
+      ========================================================= */
+.gsap-up,
+.gsap-left,
+.gsap-down,
+.gsap-right,
+.gsap-fadein,
+.gsap-rise,
+.gsap-zoomin {
+  will-change: transform, opacity;
+}
+
+/* ========================================================
+   slash
+      ========================================================= */
+/* Полноэкранный сплэш */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* фон страницы пока грузится */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Простейшая анимация логотипа */
+.splash-logo {
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.25rem solid #333;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Крутилка */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Когда скрываем сплэш */
+#splash-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =================================================================================================================================
+   MODERN COMBINED RESET
+   - based on modern-normalize + custom tweaks
+   - fully compatible with Safari, Chrome, Firefox
+=================================================================================================================================== */
+/* ---------------------------------------------------------
+   UNIVERSAL
+--------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+*:focus, *:active,
+*::before:focus,
+*::before:active,
+*::after:focus,
+*::after:active {
+  outline: none;
+}
+
+/* ---------------------------------------------------------
+   HTML
+--------------------------------------------------------- */
+html {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+
+/* ---------------------------------------------------------
+   BODY
+--------------------------------------------------------- */
+body {
+  overscroll-behavior: none;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  text-wrap: balance;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-main, system-ui, sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   TEXT ELEMENTS
+--------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+small {
+  font-size: 80%;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1em;
+}
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+a {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus, a:active {
+  outline: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   LISTS
+--------------------------------------------------------- */
+ul,
+li {
+  list-style: none;
+}
+
+/* ---------------------------------------------------------
+   IMAGES
+--------------------------------------------------------- */
+img {
+  vertical-align: top;
+}
+
+/* ---------------------------------------------------------
+   TABLES
+--------------------------------------------------------- */
+table {
+  border-color: currentcolor;
+}
+
+/* ---------------------------------------------------------
+   FORMS / BUTTONS / INPUTS
+--------------------------------------------------------- */
+input,
+button,
+textarea,
+select,
+optgroup {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* iOS / Safari fix */
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: transparent;
+}
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+/* ---------------------------------------------------------
+   OTHER INTERACTIVE ELEMENTS
+--------------------------------------------------------- */
+summary {
+  display: list-item;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -0.125rem;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* ---------------------------------------------------------
+   NAV / HEADER / FOOTER / ASIDE
+--------------------------------------------------------- */
+nav,
+header,
+footer,
+aside {
+  display: block;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------
 Base
 --------------------------------------------------------------------------------------------------------------------------------*/
 html {
-  opacity: 0.5;
+  opacity: 0.1;
   scroll-behavior: smooth;
   transition: var(--transition);
-  scrollbar-gutter: stable;
 }
 html.loaded {
   opacity: 1;
@@ -4905,6 +4961,9 @@ SIDEBAR FILTER
 }
 
 @media (min-width: 992px){
+  html {
+    scrollbar-gutter: stable;
+  }
   .typography h1 {
     font-size: 3rem;
   }

@@ -55,6 +55,10 @@
     <div class="overlay" data-overlay></div>
 
     <div class="wrapper">
+        <div id="splash-screen">
+            <div class="splash-logo"></div>
+        </div>
+
         <header class="header">
             <div class="container header__inner">
                 <!-- ================= LEFT BLOCK ================= -->
@@ -533,7 +537,7 @@
                     <div class="home-promos__grid">
                         <!-- Левая большая -->
                         <!-- 1 -->
-                        <a href="#" class="ibg promo-card promo-card--large">
+                        <a href="#" class="ibg promo-card gsap-left promo-card--large">
                             <img src="./images/webp/featured-products/Iphone17ProMax.webp" alt="">
                             <div class="promo-card__content">
                                 <div class="promo-card__label">
@@ -557,7 +561,7 @@
 
                         <!-- Правая колонка -->
                         <!-- 2 -->
-                        <a href="#" class="ibg promo-card promo-card--top">
+                        <a href="#" class="ibg promo-card gsap-down promo-card--top">
                             <img src="./images/webp/featured-products/Iphone17Air.webp" alt="">
                             <div class="promo-card__content">
                                 <h3 class="promo-card__title">
@@ -574,7 +578,7 @@
                             </span>
                         </a>
                         <!-- 3 -->
-                        <a href="#" class="ibg promo-card promo-card--bottom">
+                        <a href="#" class="ibg promo-card gsap-right promo-card--bottom">
                             <img src="./images/webp/featured-products/AppleWatchUltra2.webp" alt="">
                             <div class="promo-card__content">
                                 <h3 class="promo-card__title">
@@ -594,7 +598,7 @@
                 </div>
             </section>
 
-            <section class="new-products">
+            <section class="gsap-rise new-products">
                 <div class="container">
                     <div class="new-products__header">
                         <h2 class="new-products__title">Новинки месяца</h2>
@@ -731,7 +735,7 @@
                 </div>
             </section>
 
-            <section class="categories categories--home">
+            <section class="gsap-rise categories categories--home">
                 <div class="container">
                     <h2 class="categories__title categories__title">Каталог товаров</h2>
                     <div class="categories__grid">
@@ -811,7 +815,7 @@
                 </div>
             </section>
 
-            <section class="trust">
+            <section class="gsap-rise trust">
                 <div class="container">
                     <h2 class="trust__title">Почему выбирают нас</h2>
                     <p class="trust__description">
@@ -997,6 +1001,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <script src="./js/main.min.js"></script>
 

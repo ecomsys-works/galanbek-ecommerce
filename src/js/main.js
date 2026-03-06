@@ -47,6 +47,8 @@ import { handleCartProduct } from "./modules/product/handleCartProduct.js";
 import { cartSwiper } from "./modules/CartSwiper.js";
 import { headerColorizator } from "./modules/HeaderColorizator.js";
 
+import { ScrollAnimations } from "./modules/GSAPScroll.js";
+
 const homePage = document.getElementById('home-page');      // главная
 // const catalogPage = document.getElementById('catalog-page');    // страница основных категорий
 // const catalogCategoriesPage = document.getElementById('catalog-categories-page');   // страница подкатегорий
@@ -60,14 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
     initSearchForm();
     CartModal();
     cartSwiper();
-    
+
     headerColorizator({
         page: 'politico-page'
     })
 
+    // gsap animation class init
+    window.addEventListener('load', () => {
+        if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+            gsap.registerPlugin(ScrollTrigger);
+            ScrollAnimations.init();
+        }
+
+        const splash = document.getElementById('splash-screen');
+        if (splash) {
+            splash.classList.add('hidden'); // запускаем плавное исчезновение
+            setTimeout(() => splash.remove(), 700); // удаляем из DOM
+        }
+    });
+
+
     const phoneInput1 = document.getElementById('phone-mask-1');
     const im1 = new Inputmask("+7 (999) 999-99-99");
     im1.mask(phoneInput1);
+
+
 
 
     /* ------------------------------------------------------------------------------------------------------------------------------
