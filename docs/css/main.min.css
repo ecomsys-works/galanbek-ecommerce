@@ -4301,6 +4301,7 @@ SIDEBAR FILTER
   /* Крестик закрытия */
 }
 .town-desktop__dropdown__close {
+  display: none;
   position: absolute;
   top: 0;
   right: 0.5rem;
