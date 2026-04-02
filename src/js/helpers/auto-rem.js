@@ -1,29 +1,26 @@
-/*-------------------------------------------------------------------------------------------------------------------------------------------
-Импорт в main.js
----------------------------------------------------------------------------------------------------------------------------------------------*/
-// import autoREM from './helpers/auto-rem';
-// autoREM(1440, 16);
-
-/* -------------------------------------------------------------------------------------------------------------------------------------------------
-AutoREM - функция для установки масштабирования в автоматическом режиме (на всю ширину экрана) 
------------------------------------------------------------------------------------------------------------------------------------------------------*/
 export default function autoREM(baseSiteWidth, baseFontSize) {
-	const htmlElement = document.documentElement;
-	const widthFactor = 0.66; // сайт занимает 80% ширины
+    const htmlElement = document.documentElement;
+    const widthFactor = 1;
 
-	function updateFontSize() {
-		const screenWidth = window.innerWidth;
+    function updateFontSize() {
+        const screenWidth = window.innerWidth;
 
-		// масштаб с учётом 80%
-		const scaleFactor = (screenWidth * widthFactor) / baseSiteWidth;
+        const scaleFactor = (screenWidth * widthFactor) / baseSiteWidth;
+        const newFontSize = baseFontSize * scaleFactor;
 
-		const newFontSize = baseFontSize * scaleFactor;
+        if (screenWidth >= baseSiteWidth) {
+            htmlElement.style.fontSize = `${newFontSize}px`;
+        } else {
+            htmlElement.style.fontSize = `1rem`;
+        }
+    }
 
-		if (screenWidth >= baseSiteWidth) {
-			htmlElement.style.fontSize = `${newFontSize}px`;
-		}
-	}
+    window.addEventListener("resize", updateFontSize);
 
-	window.addEventListener("resize", updateFontSize);
-	updateFontSize();
+    updateFontSize();
+
+    // чтобы React мог почистить listener
+    return () => {
+        window.removeEventListener("resize", updateFontSize);
+    };
 }

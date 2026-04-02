@@ -41,7 +41,7 @@ export function initTownSelect({ selectId }) {
     closeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       dropdown.style.opacity = '0';
-      dropdown.style.transform = 'translateY(10px)';
+      dropdown.style.transform = 'translateY(0.625rem)';
       dropdown.style.pointerEvents = 'none';
       isClosed = true;
     });
@@ -63,7 +63,7 @@ export function initTownSelect({ selectId }) {
 
         // закрываем дроп через inline-стили
         dropdown.style.opacity = '0';
-        dropdown.style.transform = 'translateY(10px)';
+        dropdown.style.transform = 'translateY(0.625rem)';
         dropdown.style.pointerEvents = 'none';
         isClosed = true;
       });

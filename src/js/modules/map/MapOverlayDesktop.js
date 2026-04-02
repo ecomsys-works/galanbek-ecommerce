@@ -3,7 +3,7 @@ export function initMapOverlayDesktop() {
     let timer = null;
 
     mapBox.addEventListener("mouseenter", () => {
-        // Проверяем, ширина экрана >= 768px
+        // Проверяем, ширина экрана >= 48rem
         if (window.innerWidth >= 768) {
             timer = setTimeout(() => {
                 mapBox.classList.add("is-active");

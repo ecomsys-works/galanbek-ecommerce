@@ -18,7 +18,7 @@ export function initFilterCanvasAccordion() {
 
     // Сбрасываем inline-height перед анимацией
     content.style.transition = 'none';
-    content.style.height = section.classList.contains('active') ? content.scrollHeight + 'px' : '0px';
+    content.style.height = section.classList.contains('active') ? content.scrollHeight + 'px' : '0rem';
     // Форсируем ререндер
     content.offsetHeight;
     content.style.transition = 'height 0.3s ease';
@@ -28,7 +28,7 @@ export function initFilterCanvasAccordion() {
     if (isOpen) {
       content.style.height = content.scrollHeight + 'px';
     } else {
-      content.style.height = '0px';
+      content.style.height = '0rem';
     }
 
     // После transition ставим auto

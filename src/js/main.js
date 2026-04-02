@@ -8,7 +8,7 @@ BaseHelpers.addTouchClass();
 
 
 import autoREM from './helpers/auto-rem';
-autoREM(1440, 16);
+autoREM(1860, 16);
 
 /* ------------------------------------------------------------------------------------------------------------------------------
 Modules import

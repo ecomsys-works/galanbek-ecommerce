@@ -7,39 +7,35 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <script>
-        (function normalizeDPRForTV() {
-            const meta = document.querySelector('meta[name="viewport"]');
-            if (!meta) return;
+        window.addEventListener("DOMContentLoaded", () => {
+            (function forceDesktopLayout() {
+                const BREAKPOINT = 1536;
+                const DESIGN_WIDTH = 1860;
 
-            // Минимальные размеры для телевизора, например 1920x1080 и выше
-            const minTVWidth = 1920;
-            const minTVHeight = 1080;
-
-            const screenWidth = window.screen.width;
-            const screenHeight = window.screen.height;
-
-            // Применяем только если экран большой — телевизор
-            if (screenWidth >= minTVWidth && screenHeight >= minTVHeight) {
+                const screenWidth = window.screen.width;
                 const dpr = window.devicePixelRatio || 1;
+                const realWidth = screenWidth / dpr;
 
-                // вычисляем scale и округляем до 2 знаков
-                const scale = +(1 / dpr).toFixed(2);
+                const meta = document.querySelector('meta[name="viewport"]');
+                if (!meta)
+                    return;
 
-                meta.setAttribute("content", `width=device-width, initial-scale=${scale}, maximum-scale=1, user-scalable=yes`);
+                if (realWidth < BREAKPOINT) {
+                    meta.setAttribute("content", "width=device-width, initial-scale=1");
+                    console.log("adaptive mode:", realWidth);
+                    return;
+                }
 
-                console.log("normalizeDPR applied (TV):", {
-                    screenWidth,
-                    screenHeight,
-                    dpr,
+                const scale = realWidth / DESIGN_WIDTH;
+
+                meta.setAttribute("content", `width=${DESIGN_WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`, );
+
+                console.log("forced 1920 mode:", {
+                    realWidth,
                     scale
                 });
-            } else {
-                console.log("normalizeDPR skipped (not TV):", {
-                    screenWidth,
-                    screenHeight
-                });
-            }
-        })();
+            })();
+        });
     </script>
     <title>Катaлог: товары</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
