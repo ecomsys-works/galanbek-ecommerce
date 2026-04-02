@@ -24,7 +24,7 @@
 ROOT
 --------------------------------------------------------------------------------------------------------------------------------*/
 :root {
-  --site-max-width: 116.25rem;
+  --site-max-width: 120rem;
   --font-title: "Inter", sans-serif;
   --font-main: "Inter", sans-serif;
   --white: white;

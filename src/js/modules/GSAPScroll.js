@@ -12,7 +12,7 @@ export class ScrollAnimations {
 
     static revealUp() {
         gsap.utils.toArray(".gsap-up").forEach(el => {
-            const offset = el.dataset.offset || 100;
+            const offset = el.dataset.offset || '5rem';
 
             gsap.from(el, {
                 y: 100,

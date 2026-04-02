@@ -1,6 +1,5 @@
-export default function autoREM(baseSiteWidth, baseFontSize) {
-    const htmlElement = document.documentElement;
-    const widthFactor = 1;
+export default function autoREM(baseSiteWidth, baseFontSize, widthFactor = 1) {
+    const htmlElement = document.documentElement;  
 
     function updateFontSize() {
         const screenWidth = window.innerWidth;
